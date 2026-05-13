@@ -65,10 +65,21 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
-  </style>
+  
+/* major-table-style */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table { min-width: 620px; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.up { color: #b91c1c; font-weight: 600; }
+.down { color: #0369a1; font-weight: 600; }
+@media (max-width: 768px) {
+  th, td { padding: 6px 5px; font-size: 12px; }
+}
+
+</style>
 </head>
 <body>
-  <div class="header-bar">最終更新日時: 2026-05-13 12:25:40 JST</div>
+  <div class="header-bar">最終更新日時: 2026-05-13 13:56:14 JST</div>
   <main class="container">
     <section class="panel">
       <h1>株価に影響するニュース（世界 / 日本）</h1>
@@ -92,20 +103,20 @@
         <tr>
               <td>日経225</td>
               <td class="num">62742.57</td>
-              <td class="num">+0.30</td>
-              <td>11:30</td>
+              <td class="num">+0.84</td>
+              <td>13:55</td>
               <td><a href="https://nikkei225jp.com/chart/" target="_blank" rel="noopener noreferrer">詳細</a></td>
             </tr> <tr>
               <td>日経先物mini</td>
-              <td class="num">62955.00</td>
-              <td class="num">+0.49</td>
-              <td>12:25</td>
+              <td class="num">63325.00</td>
+              <td class="num">+1.08</td>
+              <td>13:55</td>
               <td><a href="https://nikkei225jp.com/cme/" target="_blank" rel="noopener noreferrer">詳細</a></td>
             </tr> <tr>
               <td>ドル円</td>
-              <td class="num">157.663</td>
-              <td class="num">+0.04</td>
-              <td>12:25</td>
+              <td class="num">157.724</td>
+              <td class="num">+0.08</td>
+              <td>13:55</td>
               <td><a href="https://nikkei225jp.com/fx/" target="_blank" rel="noopener noreferrer">詳細</a></td>
             </tr> <tr>
               <td>NYダウ</td>
@@ -115,9 +126,9 @@
               <td><a href="https://nikkei225jp.com/nasdaq/" target="_blank" rel="noopener noreferrer">詳細</a></td>
             </tr> <tr>
               <td>WTI原油</td>
-              <td class="num">100.99</td>
-              <td class="num">-1.16</td>
-              <td>12:23</td>
+              <td class="num">100.82</td>
+              <td class="num">-1.33</td>
+              <td>13:55</td>
               <td><a href="https://nikkei225jp.com/oil/" target="_blank" rel="noopener noreferrer">詳細</a></td>
             </tr>
       </tbody>
@@ -125,7 +136,38 @@
     
     </section>
 
-    <section class="panel">
+    <!-- major-table-start -->
+
+<section class="panel">
+  <h2>世界主要銘柄（10）</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>銘柄</th><th class="num">現在値</th><th class="num">昨日からの変動値</th><th class="num">昨日比(%)</th><th>時刻</th>
+        </tr>
+      </thead>
+      <tbody><tr><td>CRB指数</td><td class='num'>279.86</td><td class='num down'>-0.81</td><td class='num down'>-0.29%</td><td>04:45</td></tr><tr><td>タイ SET</td><td class='num'>1,483.56</td><td class='num up'>+29.80</td><td class='num up'>+2.05%</td><td>13:39</td></tr><tr><td>韓国 KOSPI</td><td class='num'>7,690.59</td><td class='num up'>+145.62</td><td class='num up'>+1.93%</td><td>13:54</td></tr><tr><td>NY銀先物</td><td class='num'>87.14</td><td class='num up'>+1.55</td><td class='num up'>+1.81%</td><td>13:55</td></tr><tr><td>S&amp;P GSCI商品指数</td><td class='num'>744.50</td><td class='num up'>+12.23</td><td class='num up'>+1.67%</td><td>05/12</td></tr><tr><td>シンガポールSTI</td><td class='num'>4,946.00</td><td class='num up'>+41.20</td><td class='num up'>+0.84%</td><td>13:39</td></tr><tr><td>NY金先物</td><td class='num'>4,709.30</td><td class='num up'>+22.50</td><td class='num up'>+0.48%</td><td>13:55</td></tr><tr><td>フィラデルフィア半導体</td><td class='num'>12,081.04</td><td class='num down'>-374.92</td><td class='num down'>-3.01%</td><td>05/12</td></tr><tr><td>トルコ BIST100</td><td class='num'>15,110.71</td><td class='num down'>-362.06</td><td class='num down'>-2.34%</td><td>00:09</td></tr><tr><td>インドネシア JKSE</td><td class='num'>6,858.90</td><td class='num down'>-124.30</td><td class='num down'>-1.78%</td><td>13:44</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>日本主要銘柄（10）</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>銘柄</th><th class="num">現在値</th><th class="num">昨日からの変動値</th><th class="num">昨日比(%)</th><th>時刻</th>
+        </tr>
+      </thead>
+      <tbody><tr><td>グロース250</td><td class='num'>818.64</td><td class='num up'>+11.14</td><td class='num up'>+1.38%</td><td>13:56</td></tr><tr><td>CME日経先物 円建</td><td class='num'>63,335.00</td><td class='num up'>+837.47</td><td class='num up'>+1.34%</td><td>13:43</td></tr><tr><td>日本国債 10年 利回り</td><td class='num'>2.58</td><td class='num up'>+0.03</td><td class='num up'>+1.30%</td><td>13:53</td></tr><tr><td>TOPIX</td><td class='num'>3,872.90</td><td class='num up'>+48.19</td><td class='num up'>+1.26%</td><td>13:56</td></tr><tr><td>JPX400</td><td class='num'>35,385.55</td><td class='num up'>+416.14</td><td class='num up'>+1.19%</td><td>13:56</td></tr><tr><td>日経先物 mini</td><td class='num'>63,320.00</td><td class='num up'>+670.35</td><td class='num up'>+1.07%</td><td>13:56</td></tr><tr><td>日経225</td><td class='num'>62,742.57</td><td class='num up'>+522.65</td><td class='num up'>+0.84%</td><td>13:56</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<!-- major-table-end -->
+<section class="panel">
       <h2>世界ニュース</h2>
       <article class="card">
               <h3>独自米国債弱気再燃、利上げ観測強まる-インフレ加速で利回り上昇</h3>
@@ -149,45 +191,66 @@
               <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEY4CPT96OSO00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
             </article>
 <article class="card">
-              <h3>ダウ56ドル高、ハイテク株に利益確定売り、インテル大幅安【早読み世界市場】</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-13 08:41 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ▶米国株 インフレ懸念とハイテク株の利益確定売りが圧迫。ダウ56ドル（0.1％）高。Ｓ＆Ｐ500は0.2％安。ナスダック総合0.7％安。ナスダック100は0.9％安。ラッセル2000は1.0％安。ＳＯＸ指数3.0％低下。 […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209614" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>ウォーシュ氏のFRB理事就任を上院承認-議長承認の表決は13日の方向</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 08:13 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ウォーシュ氏のFRB理事就任を上院承認-議長承認の表決は13日の方向</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-12/TEXZS7KK3NYC00?srnd=jp-economics" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>(朝)米国市場は高安まちまち 中東情勢によるインフレが露呈する形で半導体は売りへ</h3>
-              <p class="meta">配信: nikkei225jp: monex | 時刻: 2026-05-13 08:06 JST | テーマ: インフレ</p>
-              <p class="summary">要約: 【米国株式市場】ニューヨーク市場NYダウ： 49,760.56 △56.09 （5/12）NASDAQ： 26,088.20 ▼185.92 （5/12）1.概況米国市場は高安まちまちの展開となりました。日本時間12日に米国のCPIが発表され、市場予想を上回る約3年ぶりの高水準となりました。半導体株指....</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。小売・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29341" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>独自米10年債利回り年内5%到達予想、インフレ長期化で現実味増す</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 11:50 JST | テーマ: インフレ</p>
-              <p class="summary">要約: 独自米10年債利回り年内5%到達予想、インフレ長期化で現実味増す</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。小売・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEXYI7T96OSK00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>ブラックロックCEO、ベネズエラへの投資機会に「非常に強気」</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 11:36 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ブラックロックCEO、ベネズエラへの投資機会に「非常に強気」</p>
+              <h3>2026年4月の「税金滞納」倒産40件 中堅以上の企業で増加、破産が9割超</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:34 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の「税金滞納（社会保険を含む）」倒産は、40件（前年同月比100.0％増）で、1-4月の累計は70件（前年同期比12.9％増）となった。コロナ禍で、納税猶予などの措置があった2021年1-4月の8件の8.7倍と大幅に増加した。</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEWSZ1T9NJLS00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202842_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>2026年4月の「物価高」倒産 3番目の85件 資材高が続く建設業が21件、前年同月の3倍</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:33 JST | テーマ: インフレ</p>
+              <p class="summary">要約: 2026年4月に原材料や資材、エネルギー価格上昇などの物価高による倒産は、前年同月の1.5倍の85件（前年同月比51.7％増）に急増した。 2022年以降の円安局面では、2024年5月88件、2025年10月86件に次ぐ、3番目の高水準となった。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。小売・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202840_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>4月の「ゼロゼロ融資」利用後の倒産 21件 借換保証返済開始ピークの最中も小康状態</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:32 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の「ゼロゼロ融資（実質無利子・無担保融資）」を利用した企業の倒産は、21件（前年同月比22.2％減）だった。2026年1月から4カ月連続で前年同月を下回り、小康状態が続いている。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202839_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>2026年4月「負債1,000万円未満」倒産 52件 前年を上回るペースで倒産が増加</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:31 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の負債1,000万円未満の倒産は、件数が52件（前年同月比36.8％増）で、 2カ月連続で前年同月を上回った。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202837_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>暴落を恐れる投資家の処方箋 S&amp;P500の下落から資産を守る新戦略</h3>
+              <p class="meta">配信: nikkei225jp: forbes | 時刻: 2026-05-13 13:30 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 会計DXでグローバルガバナンスを再設計。企業の海外進出を支えるフェアコンサルティングの「多様性」</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://forbesjapan.com/articles/detail/97257" target="_blank" rel="noopener noreferrer">記事リンク（forbesjapan.com）</a></p>
             </article>
     </section>
 
     <section class="panel">
       <h2>日本ニュース</h2>
       <article class="card">
+              <h3>日経平均は400円程度高、プラス寄与度はキオクシア、ダイキン、オリンパスなど</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 12:52 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日午後零時４６分すぎの日経平均株価は、前日比４００円程度高い６万３１４０円前後で推移する。後場は前場終値近辺で取引を開始した。その後も堅調に推移し、午後零時４３分には同４２７円７９銭高の６万３１・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/749052" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>13日後場寄り付きの日経平均株価=190円63銭高の6万2933円20銭</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 12:31 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日後場の日経平均株価は前日比１９０円６３銭高の６万２９３３円２０銭で寄り付いた。提供：ウエルスアドバイザー社</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/749042" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>上げ幅拡大</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 12:30 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 12時46分時点の日経平均は375円高の6万3,129円、TOPIXは51ポイント高の3,925ポイント。 後場の日経平均は前引けに比べて上げ幅を拡大した。 大和証券では、海外投資家はアベノミクス時並</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%be%8c%e5%a0%b4%e5%af%84%e3%82%8a%e3%80%80%e4%b8%8a%e3%81%92%e5%b9%85%e6%8b%a1%e5%a4%a7-2/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
               <h3>日経平均は続伸、朝安も業績期待で持ち直し一時366円高=13日前場</h3>
               <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 11:55 JST | テーマ: 企業業績 / 為替</p>
               <p class="summary">要約: １３日前場は日経平均株価が、前日比１８７円６３銭高の６万２９３０円２０銭と続伸。ＴＯＰＩＸ（東証株価指数）は同３９．２４ポイント高の３９１２．１４ポイントと３日続けて上昇した。朝方は、１２日の米国市・・・</p>
@@ -195,10 +258,17 @@
               <p class="mini-link"><a href="https://kabushiki.jp/news/749017" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
+              <h3>東証前引け 日経平均は続伸 好業績銘柄に買い 最高値上回る</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:55 JST | テーマ: 企業業績</p>
+              <p class="summary">要約: 13日午前の東京株式市場で日経平均株価は続伸し、午前終値は前日比187円63銭（0.30%）高の6万2930円20銭と最高値（6万2833円）を上回った。企業の決算発表がピークを迎え、業績見通しなどが好感された銘柄に買いが入り指数を押し上げた。上げ幅は一時300円を超えた。朝方は売りが先行した。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。個別株全般に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL131VP0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
               <h3>新興株前引け グロース250が反発 投資家心理の改善で</h3>
               <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:46 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 13日午前の新興企業向け株式市場で東証グロース市場250指数は反発した。前引けは前日比9.60ポイント（1.17%）高の828.24だった。朝は下落して始まった日経平均株価が上昇に転じ、新興市場で</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。大型株に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL132OH0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
 <article class="card">
@@ -212,96 +282,68 @@
               <h3>日経平均前引け 続伸 187円高の6万2930円</h3>
               <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:40 JST | テーマ: 為替</p>
               <p class="summary">要約: 13日午前の東京株式市場で日経平均株価は続伸し、前引けは前日比187円63銭（0.30%）高の6万2930円20銭と最高値（6万2833円）を上回った。朝方は前日の米ハイテク株安などを背景に売りが先行して400円を超</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-201円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.37%（-232円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL131VU0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
-            </article>
-<article class="card">
-              <h3>13日前引けの日経平均株価=187円63銭高の6万2930円20銭と続伸</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 11:31 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １３日前場の日経平均株価は前日比１８７円６３銭高の６万２９３０円２０銭と続伸して引けた。提供：ウエルスアドバイザー社</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/749008" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>NYダウ同様に半導体関連を利食った資金が</h3>
-              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 11:30 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 前引けの日経平均は187円高の6万2,930円、TOPIXは39ポイント高の3,912ポイント。東証プライム市場の上昇銘柄数は1,025、下落銘柄数は496。出来高は12億9,531万株、売買代金は5</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%89%8d%e5%bc%95%e3%81%91%e3%80%80ny%e3%83%80%e3%82%a6%e5%90%8c%e6%a7%98%e3%81%ab%e5%8d%8a%e5%b0%8e%e4%bd%93%e9%96%a2%e9%80%a3%e3%82%92%e5%88%a9%e9%a3%9f%e3%81%a3/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>日経平均は160円高、採用銘柄の値上がり率上位はオリンパス、古河電工、セコムなど</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 11:07 JST | テーマ: 為替</p>
-              <p class="summary">要約: １３日午前１１時３分すぎの日経平均株価は、前日比１６０円程度高い６万２９００円近辺にある。朝方は１２日の米ナスダック総合指数が下落した動きを受けて売りが先行した。ただその後は持ち直す動きをみせ、午前・・・</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/749001" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>OECD報告、日銀政策金利は27年末に2%と予想-段階的な消費増税も提言</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 11:03 JST | テーマ: 金融政策</p>
-              <p class="summary">要約: OECD報告、日銀政策金利は27年末に2%と予想-段階的な消費増税も提言</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEXGPCKK3NZ200?srnd=jp-economics" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
             </article>
     </section>
 
     <section class="panel">
       <h2>nikkei225jp.com ニュース</h2>
       <article class="card">
-              <h3>日経平均は続伸、朝安も業績期待で持ち直し一時366円高=13日前場</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 11:55 JST | テーマ: 企業業績 / 為替</p>
-              <p class="summary">要約: １３日前場は日経平均株価が、前日比１８７円６３銭高の６万２９３０円２０銭と続伸。ＴＯＰＩＸ（東証株価指数）は同３９．２４ポイント高の３９１２．１４ポイントと３日続けて上昇した。朝方は、１２日の米国市・・・</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.49%（+307円）目安。個別株全般、輸出・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/749017" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>独自米10年債利回り年内5%到達予想、インフレ長期化で現実味増す</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 11:50 JST | テーマ: インフレ</p>
-              <p class="summary">要約: 独自米10年債利回り年内5%到達予想、インフレ長期化で現実味増す</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。小売・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEXYI7T96OSK00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>新興株前引け グロース250が反発 投資家心理の改善で</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:46 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 13日午前の新興企業向け株式市場で東証グロース市場250指数は反発した。前引けは前日比9.60ポイント（1.17%）高の828.24だった。朝は下落して始まった日経平均株価が上昇に転じ、新興市場で</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL132OH0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
-            </article>
-<article class="card">
-              <h3>日経平均午前187円高、バリュー逆襲なるか キオクシア決算が分岐点</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:42 JST | テーマ: 企業業績 / 為替</p>
-              <p class="summary">要約: 13日の東京株式市場で日経平均株価は続伸し、前日比187円（0.30%）高の6万2930円で午前の取引を終えた。12日の米株式市場で人工知能（AI）・半導体株が下落した流れで日経平均は下げて始まった。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.49%（-307円）目安。個別株全般、輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL130T6TT10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
-            </article>
-<article class="card">
-              <h3>日経平均前引け 続伸 187円高の6万2930円</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 11:40 JST | テーマ: 為替</p>
-              <p class="summary">要約: 13日午前の東京株式市場で日経平均株価は続伸し、前引けは前日比187円63銭（0.30%）高の6万2930円20銭と最高値（6万2833円）を上回った。朝方は前日の米ハイテク株安などを背景に売りが先行して400円を超</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-201円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL131VU0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
-            </article>
-<article class="card">
-              <h3>ブラックロックCEO、ベネズエラへの投資機会に「非常に強気」</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 11:36 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ブラックロックCEO、ベネズエラへの投資機会に「非常に強気」</p>
+              <h3>2026年4月の「税金滞納」倒産40件 中堅以上の企業で増加、破産が9割超</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:34 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の「税金滞納（社会保険を含む）」倒産は、40件（前年同月比100.0％増）で、1-4月の累計は70件（前年同期比12.9％増）となった。コロナ禍で、納税猶予などの措置があった2021年1-4月の8件の8.7倍と大幅に増加した。</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEWSZ1T9NJLS00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202842_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
             </article>
 <article class="card">
-              <h3>13日前引けの日経平均株価=187円63銭高の6万2930円20銭と続伸</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 11:31 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １３日前場の日経平均株価は前日比１８７円６３銭高の６万２９３０円２０銭と続伸して引けた。提供：ウエルスアドバイザー社</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/749008" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+              <h3>2026年4月の「物価高」倒産 3番目の85件 資材高が続く建設業が21件、前年同月の3倍</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:33 JST | テーマ: インフレ</p>
+              <p class="summary">要約: 2026年4月に原材料や資材、エネルギー価格上昇などの物価高による倒産は、前年同月の1.5倍の85件（前年同月比51.7％増）に急増した。 2022年以降の円安局面では、2024年5月88件、2025年10月86件に次ぐ、3番目の高水準となった。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。小売・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202840_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
             </article>
 <article class="card">
-              <h3>NYダウ同様に半導体関連を利食った資金が</h3>
-              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 11:30 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 前引けの日経平均は187円高の6万2,930円、TOPIXは39ポイント高の3,912ポイント。東証プライム市場の上昇銘柄数は1,025、下落銘柄数は496。出来高は12億9,531万株、売買代金は5</p>
+              <h3>4月の「ゼロゼロ融資」利用後の倒産 21件 借換保証返済開始ピークの最中も小康状態</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:32 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の「ゼロゼロ融資（実質無利子・無担保融資）」を利用した企業の倒産は、21件（前年同月比22.2％減）だった。2026年1月から4カ月連続で前年同月を下回り、小康状態が続いている。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202839_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>2026年4月「負債1,000万円未満」倒産 52件 前年を上回るペースで倒産が増加</h3>
+              <p class="meta">配信: nikkei225jp: 東京商工リサーチ | 時刻: 2026-05-13 13:31 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 2026年4月の負債1,000万円未満の倒産は、件数が52件（前年同月比36.8％増）で、 2カ月連続で前年同月を上回った。</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%89%8d%e5%bc%95%e3%81%91%e3%80%80ny%e3%83%80%e3%82%a6%e5%90%8c%e6%a7%98%e3%81%ab%e5%8d%8a%e5%b0%8e%e4%bd%93%e9%96%a2%e9%80%a3%e3%82%92%e5%88%a9%e9%a3%9f%e3%81%a3/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+              <p class="mini-link"><a href="https://www.tsr-net.co.jp/data/detail/1202837_1527.html" target="_blank" rel="noopener noreferrer">記事リンク（tsr-net.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>暴落を恐れる投資家の処方箋 S&amp;P500の下落から資産を守る新戦略</h3>
+              <p class="meta">配信: nikkei225jp: forbes | 時刻: 2026-05-13 13:30 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 会計DXでグローバルガバナンスを再設計。企業の海外進出を支えるフェアコンサルティングの「多様性」</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://forbesjapan.com/articles/detail/97257" target="_blank" rel="noopener noreferrer">記事リンク（forbesjapan.com）</a></p>
+            </article>
+<article class="card">
+              <h3>ニデック、品質不適切行為疑いで調査に着手-不正会計に続き試練</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 12:57 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ニデック、品質不適切行為疑いで調査に着手-不正会計に続き試練</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEYHBJKK3NY900?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>韓国株急反発、個人の押し目買いで切り返し-半導体株持ち直し</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 12:54 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 韓国株急反発、個人の押し目買いで切り返し-半導体株持ち直し</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEYF6OKK3NYA00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均は400円程度高、プラス寄与度はキオクシア、ダイキン、オリンパスなど</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 12:52 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日午後零時４６分すぎの日経平均株価は、前日比４００円程度高い６万３１４０円前後で推移する。後場は前場終値近辺で取引を開始した。その後も堅調に推移し、午後零時４３分には同４２７円７９銭高の６万３１・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/749052" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
     </section>
   </main>
