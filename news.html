@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>株価影響ニュース自動更新</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      background: #f6f8fb;
+      color: #1f2937;
+    }
+    .header-bar {
+      background: #0f172a;
+      color: #fff;
+      padding: 10px 16px;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px 16px 36px;
+    }
+    .panel {
+      background: #fff;
+      border: 1px solid #dbe2ea;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    h1, h2, h3 { margin: 0 0 8px; }
+    h3 { font-size: 17px; }
+    .muted { color: #4b5563; font-size: 13px; margin: 0; }
+    .meta { color: #4b5563; font-size: 13px; margin: 0 0 6px; }
+    .summary { margin: 0 0 6px; font-size: 14px; }
+    .impact { margin: 0 0 5px; font-size: 14px; font-weight: 600; color: #0f3d8c; }
+    .mini-link { margin: 0; font-size: 12px; }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px;
+      margin: 0 0 10px;
+      background: #fcfdff;
+    }
+    a { color: #1d4ed8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th, td {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 8px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #eef2ff;
+    }
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">最終更新日時: 2026-05-13 10:09:17 JST</div>
+  <main class="container">
+    <section class="panel">
+      <h1>株価に影響するニュース（世界 / 日本）</h1>
+      <p class="muted">ニュース本文のリンク先を参照して要約し、ニュース単位で日経平均への想定影響を表示します。</p>
+    </section>
+
+    <section class="panel">
+      <h2>nikkei225jp.com 市況スナップショット</h2>
+      
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th class="num">現在値</th>
+          <th class="num">前日比(%)</th>
+          <th>時刻</th>
+          <th>リンク</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+              <td>日経225</td>
+              <td class="num">62742.57</td>
+              <td class="num">-0.37</td>
+              <td>10:08</td>
+              <td><a href="https://nikkei225jp.com/chart/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>日経先物mini</td>
+              <td class="num">62550.00</td>
+              <td class="num">-0.16</td>
+              <td>10:08</td>
+              <td><a href="https://nikkei225jp.com/cme/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>ドル円</td>
+              <td class="num">157.715</td>
+              <td class="num">+0.07</td>
+              <td>10:08</td>
+              <td><a href="https://nikkei225jp.com/fx/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>NYダウ</td>
+              <td class="num">49704.47</td>
+              <td class="num">+0.11</td>
+              <td>05/12</td>
+              <td><a href="https://nikkei225jp.com/nasdaq/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>WTI原油</td>
+              <td class="num">101.43</td>
+              <td class="num">-0.73</td>
+              <td>10:06</td>
+              <td><a href="https://nikkei225jp.com/oil/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr>
+      </tbody>
+    </table>
+    
+    </section>
+
+    <section class="panel">
+      <h2>世界ニュース</h2>
+      <article class="card">
+              <h3>ダウ56ドル高、ハイテク株に利益確定売り、インテル大幅安【早読み世界市場】</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-13 08:41 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ▶米国株 インフレ懸念とハイテク株の利益確定売りが圧迫。ダウ56ドル（0.1％）高。Ｓ＆Ｐ500は0.2％安。ナスダック総合0.7％安。ナスダック100は0.9％安。ラッセル2000は1.0％安。ＳＯＸ指数3.0％低下。 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209614" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>(朝)米国市場は高安まちまち 中東情勢によるインフレが露呈する形で半導体は売りへ</h3>
+              <p class="meta">配信: nikkei225jp: monex | 時刻: 2026-05-13 08:06 JST | テーマ: インフレ</p>
+              <p class="summary">要約: 【米国株式市場】ニューヨーク市場NYダウ： 49,760.56 △56.09 （5/12）NASDAQ： 26,088.20 ▼185.92 （5/12）1.概況米国市場は高安まちまちの展開となりました。日本時間12日に米国のCPIが発表され、市場予想を上回る約3年ぶりの高水準となりました。半導体株指....</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。小売・内需に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29341" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>今日の為替市場ポイント:原油高を意識して米ドルは底堅い動きを維持する可能性</h3>
+              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-13 08:06 JST | テーマ: エネルギー / 為替</p>
+              <p class="summary">要約: 12日の米ドル・円は、東京市場では157円75銭から156円78銭まで下落。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.49%（-307円）目安。資源・空運、輸出・内需に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260513/853059.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>米国株は続伸、ディフェンシブ買いもハイテク株は下落 (朝の材料チェック)</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-13 07:20 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 5月12日の米国市場では、米国株は続伸したものの、ナスダック総合株価指数は反落して取引を終えた。イラン情勢の不透明感が意識される中、ディフェンシブ銘柄に買いが集まる一方、半導体関連などハイテク株には売りが広がった。 米国 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209596" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>独自AIがつなぐ米中経済、分断下でも中国輸出拡大-1時間5億ドル規模に</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 05:38 JST | テーマ: 通商政策</p>
+              <p class="summary">要約: 独自AIがつなぐ米中経済、分断下でも中国輸出拡大-1時間5億ドル規模に</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。自動車・機械に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-12/TEXMF3T9NJLT00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>UAEがイランに報復攻撃-背後に急接近のイスラエル、安保で協力強化</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 03:32 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: UAEがイランに報復攻撃-背後に急接近のイスラエル、安保で協力強化</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-12/TEXK4YKGZAL900?srnd=jp-economics" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>【速報】米・4月財政収支は+2150億ドル</h3>
+              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-05-13 03:16 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 【経済指標】 ・米・4月財政収支：＋2150億ドル（予想＋2200億ドル、2025年4月＋2584億ドル）</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/488773" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>【トランプ米大統領】中国に向け出発</h3>
+              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-05-13 02:56 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 【トランプ米大統領】中国に向け出発</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/488772" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+            </article>
+    </section>
+
+    <section class="panel">
+      <h2>日本ニュース</h2>
+      <article class="card">
+              <h3>日経平均は280円程度安、下げ渋るも戻りは鈍いもよう=13日前場</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 10:03 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日午前１０時すぎの日経平均株価は、前日比２８０円程度安い６万２４６０円前後で推移する。１２日の米国株式は、ＮＹダウが３日続伸した一方、ナスダック総合指数はハイテク株が利益確定売りに押され３日ぶり・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.22%（-138円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748984" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>商社が上昇</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 10:00 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 10時0分時点の日経平均は293円安の6万2,448円、TOPIXは11ポイント高の3,883ポイント。東証プライム市場の上昇銘柄数は904、下落銘柄数は617。出来高は6億8,785万株、売買代金は</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-10%e6%99%82%e3%80%80%e5%95%86%e7%a4%be%e3%81%8c%e4%b8%8a%e6%98%87/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>市況債券が下落、原油高でインフレ懸念-日経平均も安い</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 09:38 JST | テーマ: インフレ / エネルギー</p>
+              <p class="summary">要約: 市況債券が下落、原油高でインフレ懸念-日経平均も安い</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.44%（-276円）目安。小売・内需、資源・空運に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEWT6KKJH6V500?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均、反落で始まる 米ハイテク株安で</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 09:09 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 13日の東京株式市場で日経平均株価は反落で始まった。始値は前日比344円55銭安の6万2398円02銭。イラン情勢を巡る先行き不透明感や米インフレ加速への懸念か</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.37%（-232円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL130IZ0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均が反落、ナスダック指数が下落しAIや半導体関連などに売り=13日寄り付き</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 09:05 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日の日経平均株価は、前日比３４４円５５銭安の６万２３９８円０２銭と反落して取引を開始した。１２日の米国株式は、ＮＹダウが３日続伸した一方、ナスダック総合指数はハイテク株が利益確定売りに押され３日・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748952" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>13日寄り付きの日経平均株価=344円55銭安の6万2398円02銭</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 09:01 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日の日経平均株価は前日比３４４円５５銭安の６万２３９８円０２銭で寄り付いた。提供：ウエルスアドバイザー社</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748951" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>「株式」ADR日本株ランキング~やや売り優勢、シカゴは大阪日中比75円高の62575円</h3>
+              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-13 09:00 JST | テーマ: 為替</p>
+              <p class="summary">要約: ADR（米国預託証券）の日本株は、対東証比較（1ドル157.59円換算）で、ファナック＜6902＞、オリックス＜8411＞、ディスコ＜6146＞などが下落し、やや売り優勢。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-201円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260513/853069.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均は反落したが、TOPIXは続伸</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 09:00 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 9時12分時点の日経平均は343円安の6万2,398円、TOPIXは11ポイント高の3,883ポイント。 米国で消費者物価の上昇をきっかけにリスク回避姿勢が強まり、半導体関連が売られたため、日本でもS</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%af%84%e3%82%8a%e4%bb%98%e3%81%8d%e3%80%80%e6%97%a5%e7%b5%8c%e5%b9%b3%e5%9d%87%e3%81%af%e5%8f%8d%e8%90%bd%e3%81%97%e3%81%9f%e3%81%8c%e3%80%81topix%e3%81%af%e7%b6%9a/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+    </section>
+
+    <section class="panel">
+      <h2>nikkei225jp.com ニュース</h2>
+      <article class="card">
+              <h3>日経平均は280円程度安、下げ渋るも戻りは鈍いもよう=13日前場</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 10:03 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日午前１０時すぎの日経平均株価は、前日比２８０円程度安い６万２４６０円前後で推移する。１２日の米国株式は、ＮＹダウが３日続伸した一方、ナスダック総合指数はハイテク株が利益確定売りに押され３日ぶり・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.22%（-138円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748984" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>商社が上昇</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-13 10:00 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 10時0分時点の日経平均は293円安の6万2,448円、TOPIXは11ポイント高の3,883ポイント。東証プライム市場の上昇銘柄数は904、下落銘柄数は617。出来高は6億8,785万株、売買代金は</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-10%e6%99%82%e3%80%80%e5%95%86%e7%a4%be%e3%81%8c%e4%b8%8a%e6%98%87/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>市況債券が下落、原油高でインフレ懸念-日経平均も安い</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 09:38 JST | テーマ: インフレ / エネルギー</p>
+              <p class="summary">要約: 市況債券が下落、原油高でインフレ懸念-日経平均も安い</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.44%（-276円）目安。小売・内需、資源・空運に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEWT6KKJH6V500?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>独自AI半導体の米セレブラス、IPO仮条件超える価格設定の方向-関係者</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 09:17 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 独自AI半導体の米セレブラス、IPO仮条件超える価格設定の方向-関係者</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEY6J8T96OSI00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均、反落で始まる 米ハイテク株安で</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-13 09:09 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 13日の東京株式市場で日経平均株価は反落で始まった。始値は前日比344円55銭安の6万2398円02銭。イラン情勢を巡る先行き不透明感や米インフレ加速への懸念か</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.37%（-232円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL130IZ0T10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>メキシコの格付け見通し、S&amp;Pが「ネガティブ」に変更-債務増加で</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-13 09:07 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: メキシコの格付け見通し、S&amp;Pが「ネガティブ」に変更-債務増加で</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+264円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-13/TEY1JWKK3NYB00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均が反落、ナスダック指数が下落しAIや半導体関連などに売り=13日寄り付き</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 09:05 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日の日経平均株価は、前日比３４４円５５銭安の６万２３９８円０２銭と反落して取引を開始した。１２日の米国株式は、ＮＹダウが３日続伸した一方、ナスダック総合指数はハイテク株が利益確定売りに押され３日・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-264円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748952" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>13日寄り付きの日経平均株価=344円55銭安の6万2398円02銭</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-13 09:01 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １３日の日経平均株価は前日比３４４円５５銭安の６万２３９８円０２銭で寄り付いた。提供：ウエルスアドバイザー社</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+201円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/748951" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+    </section>
+  </main>
+</body>
+</html>
