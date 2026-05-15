@@ -66,7 +66,7 @@
       font-variant-numeric: tabular-nums;
     }
   
-/* major-table-v3 */
+/* major-table-v12 */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .quote-table{width:100%;min-width:720px;border-collapse:collapse}
 .quote-table th,.quote-table td{border:1px solid #e5e7eb;padding:8px;white-space:nowrap;text-align:right}
@@ -77,70 +77,62 @@
 </style>
 </head>
 <body>
-  <div class="header-bar">最終更新日時: 2026-05-15 10:05:39 JST</div>
+  <div class="header-bar">最終更新日時: 2026-05-15 12:08:24 JST</div>
   <main class="container">
-    <section class="panel">
-      <h1>株価に影響するニュース（世界 / 日本）</h1>
-      <p class="muted">ニュース本文のリンク先を参照して要約し、ニュース単位で日経平均への想定影響を表示します。</p>
-    </section>
-
-    <section class="panel">
-      <h2>nikkei225jp.com 市況スナップショット</h2>
-      
-    <table>
-      <thead>
-        <tr>
-          <th>指標</th>
-          <th class="num">現在値</th>
-          <th class="num">前日比(%)</th>
-          <th>時刻</th>
-          <th>リンク</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-              <td>日経225</td>
-              <td class="num">62654.05</td>
-              <td class="num">-0.29</td>
-              <td>10:05</td>
-              <td><a href="https://nikkei225jp.com/chart/" target="_blank" rel="noopener noreferrer">詳細</a></td>
-            </tr> <tr>
-              <td>日経先物mini</td>
-              <td class="num">62545.00</td>
-              <td class="num">-0.29</td>
-              <td>10:05</td>
-              <td><a href="https://nikkei225jp.com/cme/" target="_blank" rel="noopener noreferrer">詳細</a></td>
-            </tr> <tr>
-              <td>ドル円</td>
-              <td class="num">158.477</td>
-              <td class="num">+0.08</td>
-              <td>10:05</td>
-              <td><a href="https://nikkei225jp.com/fx/" target="_blank" rel="noopener noreferrer">詳細</a></td>
-            </tr> <tr>
-              <td>NYダウ</td>
-              <td class="num">49693.20</td>
-              <td class="num">+0.74</td>
-              <td>05/14</td>
-              <td><a href="https://nikkei225jp.com/nasdaq/" target="_blank" rel="noopener noreferrer">詳細</a></td>
-            </tr> <tr>
-              <td>WTI原油</td>
-              <td class="num">101.82</td>
-              <td class="num">+0.64</td>
-              <td>10:02</td>
-              <td><a href="https://nikkei225jp.com/oil/" target="_blank" rel="noopener noreferrer">詳細</a></td>
-            </tr>
-      </tbody>
-    </table>
     
-    </section>
+
+    <section class="panel major-table" data-block="world-major">
+  <h2>世界主要銘柄（10個）</h2>
+  <div class="table-wrap"><table class="quote-table">
+    <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th></tr></thead>
+    <tbody><tr class="row-up"><td>米国S&amp;P500</td><td>7501.24</td><td class="up">+56.99</td><td class="up">+0.77</td></tr><tr class="row-up"><td>米国NASDAQ</td><td>26635.22</td><td class="up">+232.88</td><td class="up">+0.88</td></tr><tr class="row-up"><td>米国NYSE FANG＋</td><td>17550.13</td><td class="up">+113.58</td><td class="up">+0.65</td></tr><tr class="row-down"><td>中国上海総合</td><td>4171.51</td><td class="down">-6.41</td><td class="down">-0.15</td></tr><tr class="row-up"><td>ドイツDAX</td><td>24456.26</td><td class="up">+319.45</td><td class="up">+1.32</td></tr><tr class="row-down"><td>NY金先物</td><td>4625.90</td><td class="down">-52.20</td><td class="down">-1.12</td></tr><tr class="row-up"><td>WTI原油先物</td><td>102.48</td><td class="up">+1.31</td><td class="up">+1.29</td></tr><tr class="row-down"><td>米国債券10年利回</td><td>4.46</td><td class="down">-0.02</td><td class="down">-0.45</td></tr><tr class="row-down"><td>香港ハンセン</td><td>26143.52</td><td class="down">-245.52</td><td class="down">-0.93</td></tr><tr class="row-up"><td>ユーロSTOXX50</td><td>5934.96</td><td class="up">+73.89</td><td class="up">+1.26</td></tr></tbody>
+  </table></div>
+  <p class="muted">取得元の取得時刻: 2026-05-15 12:08:26 JST / 取得件数: 10/10</p>
+</section>
+<section class="panel major-table" data-block="japan-major">
+  <h2>日本主要銘柄（10個）</h2>
+  <div class="table-wrap"><table class="quote-table">
+    <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th></tr></thead>
+    <tbody><tr class="row-down"><td>日本日経225</td><td>61849.81</td><td class="down">-804.24</td><td class="down">-1.28</td></tr><tr class="row-down"><td>日本TOPIX</td><td>409.90</td><td class="down">-1.30</td><td class="down">-0.32</td></tr><tr class="row-down"><td>日本グロース250</td><td>2335.00</td><td class="down">-12.00</td><td class="down">-0.51</td></tr><tr class="row-up"><td>日本国債10年利回り</td><td>4035.00</td><td class="up">+6.00</td><td class="up">+0.15</td></tr><tr class="row-up"><td>東証REIT指数</td><td>1973.50</td><td class="up">+3.00</td><td class="up">+0.15</td></tr><tr class="row-flat"><td>日経JASDAQ平均</td><td>2555.92</td><td class="flat">+0.00</td><td class="flat">+0.00</td></tr><tr class="row-up"><td>ドル円</td><td>158.52</td><td class="up">+0.67</td><td class="up">+0.43</td></tr><tr class="row-up"><td>JPX日経400</td><td>36710.00</td><td class="up">+40.00</td><td class="up">+0.11</td></tr><tr class="row-down"><td>東証プライム上場ETF</td><td>4048.00</td><td class="down">-18.00</td><td class="down">-0.44</td></tr><tr class="row-up"><td>マザーズ関連ETF</td><td>635.00</td><td class="up">+6.00</td><td class="up">+0.95</td></tr></tbody>
+  </table></div>
+  <p class="muted">取得元の取得時刻: 2026-05-15 12:08:28 JST / 取得件数: 10/10</p>
+</section>
 
     <section class="panel">
       <h2>世界ニュース</h2>
       <article class="card">
+              <h3>ドルと原油の相関が過去最高水準-イラン戦争背景に異例の連動</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 10:47 JST | テーマ: エネルギー</p>
+              <p class="summary">要約: ドルと原油の相関が過去最高水準-イラン戦争背景に異例の連動</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。資源・空運に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF1TJBKK3NYA00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>トヨタが米国で20億ドル追加投資で生産能力拡大、30年稼働開始</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 10:17 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: トヨタが米国で20億ドル追加投資で生産能力拡大、30年稼働開始</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF1ZPDT96OSL00?srnd=jp-economics" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>FRBのバー理事、バランスシート縮小案に反論-「誤った目標」</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 10:12 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: FRBのバー理事、バランスシート縮小案に反論-「誤った目標」</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF1UIST96OSR00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>ボーイングが4%安 中国の購入規模で失望感</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 10:05 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ５月15日の米国株式市場でボーイング（BA）の終値が前日比11.39ドル（4.73％）安の229.21ドルと大幅反落した。米中首脳会談でボーイング社の航空機購入で大型商談がまとまるとの期待感がはく落し、売りが出た。 中国 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-263円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209922" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
               <h3>エヌビディアが一時4.7%高 一部の中国企業にH200の販売を許可との報道で</h3>
               <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 09:57 JST | テーマ: 市場全般</p>
               <p class="summary">要約: ５月14日の米株式市場でエヌビディア（ＮＶＩＤＩＡ、チッカーNVDA）が７日続伸し、一時は前日比4.7％高の236.47ドルを付けた。米政府が中国企業約10社に対し、人工知能（ＡＩ）向け半導体「Ｈ200」の購入を許可した […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209949" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
             </article>
 <article class="card">
@@ -151,182 +143,140 @@
               <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209903" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
             </article>
 <article class="card">
-              <h3>(朝)米国市場は3指数揃って上昇 米中首脳会談が波乱なく通過し、小売売上高も消費の底堅さを示し買い優勢の展開</h3>
-              <p class="meta">配信: nikkei225jp: monex | 時刻: 2026-05-15 08:04 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 【米国株式市場】ニューヨーク市場NYダウ： 50,063.46 △370.26 （5/14）NASDAQ： 26,635.22 △232.88 （5/14）1.概況米国市場は3指数揃って上昇しました。米中首脳会談では波乱がなかったほか、小売売上高も市場予想を上回り消費の底型さをあらためて示したこと....</p>
+              <h3>ミュトスがMacOSの突破口発見/AI企業のIPOラッシュ、セレブラスで幕開け(世界メディア拾い読み)</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 10:50 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ミュトス、アップルのソフトウエアの脆弱性発見 米ウォール・ストリート・ジャーナル紙は14日、アンソロピックのＡＩ（人工知能）技術「ミュトス」がアップルのソフトウエアの突破口を見つけたと報じた。ハッカーにとって最も攻略困 […]</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29359" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209963" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
             </article>
 <article class="card">
-              <h3>今日の為替市場ポイント:米国金利の先高観強まる</h3>
-              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-15 07:56 JST | テーマ: 金融政策 / 為替</p>
-              <p class="summary">要約: 14日の米ドル・円は、東京市場では157円71銭から157円99銭まで上昇。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.49%（+307円）目安。銀行・不動産、輸出・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260515/853382.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>米国株は反発、シスコシステムズやエヌビディアが買われる (朝の材料チェック)</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 07:20 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 5月14日の米国市場では、米国株は反発した。個別材料が好感された銘柄への買いが相場を押し上げた。ハイテク株比率が高いナスダック総合株価指数は続伸し、最高値を更新した。 米国株、反発して5万ドル台を回復 14日の米国株式市 […]</p>
+              <h3>AIチップメーカーCerebrasがついに上場、CEOは資産約5372億円に</h3>
+              <p class="meta">配信: nikkei225jp: forbes | 時刻: 2026-05-15 10:30 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 会計DXでグローバルガバナンスを再設計。企業の海外進出を支えるフェアコンサルティングの「多様性」</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209881" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>14日の米国市場ダイジェスト:米国株式市場は上昇、AI期待が後押し</h3>
-              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-15 06:48 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ■NY株式：米国株式市場は上昇、AI期待が後押し 米国株式市場は上昇。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260515/853376.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【速報】 米連邦準備制度理事会(FRB)ミラン氏、理事職辞任を大統領に提出、ウォーシュ氏への移行前</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-05-15 03:18 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 米連邦準備制度理事会（FRB）ミラン理事、理事職辞任を大統領に提出、ウォーシュ氏への移行前</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/488926" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【速報】ドル・円158円台、ドルじり高、金利先高観</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-05-15 02:55 JST | テーマ: 金融政策</p>
-              <p class="summary">要約: ドル・円158円台、ドルじり高、金利先高観</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/488925" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+              <p class="mini-link"><a href="https://forbesjapan.com/articles/detail/97467" target="_blank" rel="noopener noreferrer">記事リンク（forbesjapan.com）</a></p>
             </article>
     </section>
 
     <section class="panel">
       <h2>日本ニュース</h2>
       <article class="card">
-              <h3>株、三菱UFJなど銀行決算に注目 米中会談に安心感・極東証券研の佐藤氏</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 09:45 JST | テーマ: 企業業績</p>
-              <p class="summary">要約: ※15日8時台にQUICK端末で配信されたニュースを再編集しています。 佐藤俊朗・極東証券経済研究所社長 15日の東京株式市場で日経平均株価は反発するだろう。前日の米株式市場ではナスダック総合株価指数が上昇し、連日で最 […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。個別株全般に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209935" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【為替】160円の円安阻止にこだわる「謎」</h3>
-              <p class="meta">配信: nikkei225jp: 吉田恒の為替デイリー | 時刻: 2026-05-15 09:20 JST | テーマ: 為替</p>
-              <p class="summary">要約: 日本の通貨当局の為替介入姿勢を見る限り、160円を超える円安を容認しない方針のようだ。なぜ160円の円安阻止にこだわるのか。。160円の円安阻止にこだわる「謎」について考えてみる。</p>
+              <h3>日経平均は804円安と続急落、買い一巡後に下げ転換し高値波乱続く=15日前場</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:55 JST | テーマ: 為替</p>
+              <p class="summary">要約: １５日前場は日経平均株価が、前日比８０４円２４銭安の６万１８４９円８１銭と続急落。ＴＯＰＩＸ（東証株価指数）も同１４．３７ポイント安の３８６４．９０ポイントと続落した。日経平均は、１４日の米国株高を・・・</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29360" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750558" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
-              <h3>日経平均、反発で始まる 上げ幅400円、米株高支え</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 09:10 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 15日の東京株式市場で日経平均株価は反発で始まった。始値は前日比224円66銭高の6万2878円71銭。前日の米株式市場では、半導体のエヌビディアなどハイテク株を中心に上昇した。投</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.37%（+232円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL150RC0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+              <h3>東証前引け 日経平均は続落 金利上昇で利益確定売り強まる</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:48 JST | テーマ: 金融政策</p>
+              <p class="summary">要約: 15日午前の東京株式市場で日経平均株価は続落し、午前終値は前日比804円24銭（1.28%）安の6万1849円81銭だった。国内債券市場で長期金利が一段と上昇した。株式の相対的な割高感への警戒が強まり、半導体関連を中心に利益確定売りを促した。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL152EK0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
 <article class="card">
-              <h3>日経平均は反発スタート、米国株高を追い風に買い優勢=15日寄り付き</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 09:04 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １５日の日経平均株価は、前日比２２４円６６銭高の６万２８７８円７１銭と反発して取引を開始した。トランプ米大統領が１４日、中国・習近平主席と北京で会談。米政府は中国企業の約１０社に対し、エヌビディアの・・・</p>
+              <h3>新興株前引け グロース250が小幅続落 トライアルが下押し</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:43 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 15日午前の新興企業向け株式市場で東証グロース市場250指数は小幅に続落した。前引けは前日比0.25ポイント（0.03%）安の803.27だった。前引けにかけて日経平均株価が急速に下げ幅を広げて投資家心理が悪化し、グロース250指数も小幅ながら下</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-200円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL1523D0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>「株式」ADR日本株ランキング~全般買い優勢、シカゴは大阪日中比375円安の63045円</h3>
+              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-15 11:36 JST | テーマ: 為替</p>
+              <p class="summary">要約: ADR（米国預託証券）の日本株は、対東証比較（1ドル158.37円換算）で、住友商事＜8035＞、リクルートHD＜6098＞、ディスコ＜6146＞などが上昇し、全般買い優勢。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260515/853415.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均前引け 続落 804円安の6万1849円</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:35 JST | テーマ: 為替</p>
+              <p class="summary">要約: 15日午前の東京株式市場で日経平均株価は続落し、前引けは前日比804円24銭（1.28%）安の6万1849円81銭だった。国内債券市場で長期金利が29年ぶりの高水準まで上昇し、株式の相対的な割高感を警戒した売りが半</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL152DI0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>15日前引けの日経平均株価=804円24銭安の6万1849円81銭と大幅続落</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:31 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １５日前場の日経平均株価は前日比８０４円２４銭安の６万１８４９円８１銭と大幅続落して引けた。提供：ウエルスアドバイザー社</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/750484" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750538" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
-              <h3>15日寄り付きの日経平均株価=224円66銭高の6万2878円71銭</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 09:01 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １５日の日経平均株価は前日比２２４円６６銭高の６万２８７８円７１銭で寄り付いた。提供：ウエルスアドバイザー社</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+200円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/750483" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+              <h3>804円安。金利上昇と半導体生産のボトルネックリスクを警戒</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-15 11:30 JST | テーマ: 金融政策 / 為替</p>
+              <p class="summary">要約: 前引けの日経平均は804円安の6万1,849円、TOPIXは14ポイント安の3,864ポイント。東証プライム市場の上昇銘柄数は848、下落銘柄数は677。出来高は13億7,548万株、売買代金は5兆1</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.44%（+276円）目安。銀行・不動産、輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%89%8d%e5%bc%95%e3%81%91%e3%80%80804%e5%86%86%e5%ae%89%e3%80%82%e9%87%91%e5%88%a9%e4%b8%8a%e6%98%87%e3%81%a8%e5%8d%8a%e5%b0%8e%e4%bd%93%e7%94%9f%e7%94%a3%e3%81%ae/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
             </article>
 <article class="card">
-              <h3>4月の企業物価は前年比4.9%上昇、中東情勢受けて伸び拡大-日銀</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 09:00 JST | テーマ: 金融政策 / インフレ</p>
-              <p class="summary">要約: 4月の企業物価は前年比4.9%上昇、中東情勢受けて伸び拡大-日銀</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.44%（+276円）目安。銀行・不動産、小売・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-14/TF1VMQKK3NYF00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>反発。フジクラも反発。メガバンクが高い</h3>
-              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-15 09:00 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 9時11分時点の日経平均は482円高の6万3,131円、TOPIXは43ポイント高の3,923ポイント。 日経平均は反発し、前日にストップ安となったフジクラも反発。 三菱UFJや三井住友が高い。 ファ</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%af%84%e3%82%8a%e4%bb%98%e3%81%8d%e3%80%80%e5%8f%8d%e7%99%ba%e3%80%82%e3%83%95%e3%82%b8%e3%82%af%e3%83%a9%e3%82%82%e5%8f%8d%e7%99%ba%e3%80%82%e3%83%a1%e3%82%ac/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>マーケット早耳情報=主な前場寄り前成り行き注文状況(2)日本製鉄、アドバンテス、みずほなど</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 08:54 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １５日午前８時５０分現在の主な寄り前成り行き注文状況は以下の通り。郵船&amp;lt;9101.T&amp;gt; 売り２万株、買い３万株日本製鉄&amp;lt;5401.T&amp;gt; 売り３７万株、買い４０万株アドバンテス&amp;lt;6857.T&amp;gt; 売り６・・・</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/750480" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+              <h3>日経平均は840円安、採用銘柄の値下がり率上位はネクソン、SMC、TOPPANなど</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:10 JST | テーマ: 為替</p>
+              <p class="summary">要約: １５日午前１１時８分すぎの日経平均株価は、前日比８４０円程度安い６万１８１０円近辺にある。１４日の米国株高を受けて買い優勢で取引を開始したものの、利益確定売りに押される展開。午前１１時７分には同８５・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750534" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
     </section>
 
     <section class="panel">
       <h2>nikkei225jp.com ニュース</h2>
       <article class="card">
-              <h3>エヌビディアが一時4.7%高 一部の中国企業にH200の販売を許可との報道で</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 09:57 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ５月14日の米株式市場でエヌビディア（ＮＶＩＤＩＡ、チッカーNVDA）が７日続伸し、一時は前日比4.7％高の236.47ドルを付けた。米政府が中国企業約10社に対し、人工知能（ＡＩ）向け半導体「Ｈ200」の購入を許可した […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209949" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>片山財務相、金利上昇は世界的な現象-G7財務相会合でも話題になる</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 09:53 JST | テーマ: 金融政策</p>
-              <p class="summary">要約: 片山財務相、金利上昇は世界的な現象-G7財務相会合でも話題になる</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF0S7AKK3NYD00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>ニトリHD買い気配、円は159円への下落観測も(朝のニュース拾い読み)</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 09:50 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 本記事は、市場関係者の注目ニュースをピックアップした解説記事です。5月15日 9時頃までのデータやニュースをもとに構成しています。 日経平均先物は反発で始まる 15日の日経平均先物市場は、反発して始まった。大阪取引所（大 […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+138円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209928" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>株、三菱UFJなど銀行決算に注目 米中会談に安心感・極東証券研の佐藤氏</h3>
-              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-05-15 09:45 JST | テーマ: 企業業績</p>
-              <p class="summary">要約: ※15日8時台にQUICK端末で配信されたニュースを再編集しています。 佐藤俊朗・極東証券経済研究所社長 15日の東京株式市場で日経平均株価は反発するだろう。前日の米株式市場ではナスダック総合株価指数が上昇し、連日で最 […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。個別株全般に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=209935" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>市況株反発、米テック株高支え-米利上げ観測で円は158円台</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 09:29 JST | テーマ: 金融政策</p>
-              <p class="summary">要約: 市況株反発、米テック株高支え-米利上げ観測で円は158円台</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.37%（+232円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF1UPNKK3NYE00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>【為替】160円の円安阻止にこだわる「謎」</h3>
-              <p class="meta">配信: nikkei225jp: 吉田恒の為替デイリー | 時刻: 2026-05-15 09:20 JST | テーマ: 為替</p>
-              <p class="summary">要約: 日本の通貨当局の為替介入姿勢を見る限り、160円を超える円安を容認しない方針のようだ。なぜ160円の円安阻止にこだわるのか。。160円の円安阻止にこだわる「謎」について考えてみる。</p>
+              <h3>日経平均は804円安と続急落、買い一巡後に下げ転換し高値波乱続く=15日前場</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:55 JST | テーマ: 為替</p>
+              <p class="summary">要約: １５日前場は日経平均株価が、前日比８０４円２４銭安の６万１８４９円８１銭と続急落。ＴＯＰＩＸ（東証株価指数）も同１４．３７ポイント安の３８６４．９０ポイントと続落した。日経平均は、１４日の米国株高を・・・</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29360" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750558" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
-              <h3>日経平均、反発で始まる 上げ幅400円、米株高支え</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 09:10 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 15日の東京株式市場で日経平均株価は反発で始まった。始値は前日比224円66銭高の6万2878円71銭。前日の米株式市場では、半導体のエヌビディアなどハイテク株を中心に上昇した。投</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.37%（+232円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL150RC0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+              <h3>東証前引け 日経平均は続落 金利上昇で利益確定売り強まる</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:48 JST | テーマ: 金融政策</p>
+              <p class="summary">要約: 15日午前の東京株式市場で日経平均株価は続落し、午前終値は前日比804円24銭（1.28%）安の6万1849円81銭だった。国内債券市場で長期金利が一段と上昇した。株式の相対的な割高感への警戒が強まり、半導体関連を中心に利益確定売りを促した。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+169円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL152EK0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
 <article class="card">
-              <h3>AI半導体のセレブラス上場、株価68%高-今年最大IPOでCEOの資産急増</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-05-15 09:08 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: AI半導体のセレブラス上場、株価68%高-今年最大IPOでCEOの資産急増</p>
+              <h3>新興株前引け グロース250が小幅続落 トライアルが下押し</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:43 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 15日午前の新興企業向け株式市場で東証グロース市場250指数は小幅に続落した。前引けは前日比0.25ポイント（0.03%）安の803.27だった。前引けにかけて日経平均株価が急速に下げ幅を広げて投資家心理が悪化し、グロース250指数も小幅ながら下</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-200円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL1523D0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>「株式」ADR日本株ランキング~全般買い優勢、シカゴは大阪日中比375円安の63045円</h3>
+              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-05-15 11:36 JST | テーマ: 為替</p>
+              <p class="summary">要約: ADR（米国預託証券）の日本株は、対東証比較（1ドル158.37円換算）で、住友商事＜8035＞、リクルートHD＜6098＞、ディスコ＜6146＞などが上昇し、全般買い優勢。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260515/853415.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均前引け 続落 804円安の6万1849円</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-05-15 11:35 JST | テーマ: 為替</p>
+              <p class="summary">要約: 15日午前の東京株式市場で日経平均株価は続落し、前引けは前日比804円24銭（1.28%）安の6万1849円81銭だった。国内債券市場で長期金利が29年ぶりの高水準まで上昇し、株式の相対的な割高感を警戒した売りが半</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL152DI0V10C26A5000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
+              <h3>15日前引けの日経平均株価=804円24銭安の6万1849円81銭と大幅続落</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:31 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: １５日前場の日経平均株価は前日比８０４円２４銭安の６万１８４９円８１銭と大幅続落して引けた。提供：ウエルスアドバイザー社</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-05-15/TF1NT1KJH6VE00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750538" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>804円安。金利上昇と半導体生産のボトルネックリスクを警戒</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-05-15 11:30 JST | テーマ: 金融政策 / 為替</p>
+              <p class="summary">要約: 前引けの日経平均は804円安の6万1,849円、TOPIXは14ポイント安の3,864ポイント。東証プライム市場の上昇銘柄数は848、下落銘柄数は677。出来高は13億7,548万株、売買代金は5兆1</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.44%（+276円）目安。銀行・不動産、輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%89%8d%e5%bc%95%e3%81%91%e3%80%80804%e5%86%86%e5%ae%89%e3%80%82%e9%87%91%e5%88%a9%e4%b8%8a%e6%98%87%e3%81%a8%e5%8d%8a%e5%b0%8e%e4%bd%93%e7%94%9f%e7%94%a3%e3%81%ae/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>日経平均は840円安、採用銘柄の値下がり率上位はネクソン、SMC、TOPPANなど</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-05-15 11:10 JST | テーマ: 為替</p>
+              <p class="summary">要約: １５日午前１１時８分すぎの日経平均株価は、前日比８４０円程度安い６万１８１０円近辺にある。１４日の米国株高を受けて買い優勢で取引を開始したものの、利益確定売りに押される展開。午前１１時７分には同８５・・・</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+263円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/750534" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
     </section>
-  <section class="panel major-table" data-block="world-major">
-<h2>世界主要銘柄（10個）</h2>
-<div class="table-wrap"><table class="quote-table">
-<thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-<tbody><tr class="row-flat"><td>米国S&P500</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">6.81</td><td class="up">26.78</td></tr><tr class="row-flat"><td>米国NASDAQ</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">10.91</td><td class="up">39.36</td></tr><tr class="row-flat"><td>米国NYSE FANG＋</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">10.02</td><td class="up">29.16</td></tr><tr class="row-flat"><td>中国上海総合</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">6.97</td><td class="up">24.64</td></tr><tr class="row-flat"><td>ドイツDAX</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">1.66</td><td class="up">2.59</td></tr><tr class="row-flat"><td>NY金先物</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="down">-3.60</td><td class="up">45.45</td></tr><tr class="row-flat"><td>WTI原油先物</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">11.62</td><td class="up">61.36</td></tr><tr class="row-flat"><td>米国債券10年利回</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">4.18</td><td class="down">-1.48</td></tr><tr class="row-flat"><td>香港ハンセン</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">2.84</td><td class="up">11.62</td></tr><tr class="row-flat"><td>ユーロSTOXX50</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="down">-0.83</td><td class="up">9.58</td></tr></tbody></table></div>
-<p class="muted">取得元の取得時刻: 2026-05-15 01:05:41 / 取得件数: 10</p>
-</section>
-<section class="panel major-table" data-block="japan-major">
-<h2>日本主要銘柄（10個）</h2>
-<div class="table-wrap"><table class="quote-table">
-<thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-<tbody><tr class="row-flat"><td>日本日経225</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">11.90</td><td class="up">65.67</td></tr><tr class="row-flat"><td>日本TOPIX</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td></tr><tr class="row-flat"><td>日本グロース250</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">10.33</td><td class="up">58.82</td></tr><tr class="row-flat"><td>日本国債10年利回り</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td></tr><tr class="row-flat"><td>東証REIT指数</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="down">-4.19</td><td class="up">6.14</td></tr><tr class="row-flat"><td>日経JASDAQ平均</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td><td class="flat">-</td></tr><tr class="row-flat"><td>ドル円</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="down">-0.22</td><td class="up">8.05</td></tr><tr class="row-flat"><td>日本長期金利先物</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="down">-0.74</td><td class="up">33.78</td></tr><tr class="row-flat"><td>JPX日経400</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">5.88</td><td class="up">44.05</td></tr><tr class="row-flat"><td>マザーズ関連ETF</td><td>-</td><td class="flat">-</td><td class="flat">-</td><td class="up">7.00</td><td class="up">15.77</td></tr></tbody></table></div>
-<p class="muted">取得元の取得時刻: 2026-05-15 01:05:43 / 取得件数: 10</p>
-</section>
-</main>
+  </main>
 </body>
 </html>
