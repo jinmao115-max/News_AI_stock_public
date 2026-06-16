@@ -65,46 +65,101 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
-  
-/* major-table-v14 */
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.quote-table{width:100%;min-width:820px;border-collapse:collapse}
-.quote-table th,.quote-table td{border:1px solid #e5e7eb;padding:8px;white-space:nowrap;text-align:right}
-.quote-table th:first-child,.quote-table td:first-child{text-align:left}
-.up{color:#15803d;font-weight:600}.down{color:#db2777;font-weight:600}.flat{color:#6b7280}
-.row-up{background:#ecfdf3}.row-down{background:#fff1f7}
-
-</style>
+  </style>
 </head>
 <body>
-  <div class="header-bar">最終更新日時: 2026-06-17 01:56:52 JST</div>
+  <div class="header-bar">最終更新日時: 2026-06-17 08:11:56 JST</div>
   <main class="container">
-    
+    <section class="panel">
+      <h1>株価に影響するニュース（世界 / 日本）</h1>
+      <p class="muted">ニュース本文のリンク先を参照して要約し、ニュース単位で日経平均への想定影響を表示します。</p>
+    </section>
 
-    <section class="panel major-table" data-block="world-major">
-  <h2>世界主要銘柄（11個）</h2>
-  <div class="table-wrap"><table class="quote-table">
-    <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-    <tbody><tr class="row-up"><td>オルカンeMAXIS Slim</td><td>157.75</td><td class="up">+1.28</td><td class="up">+0.82</td><td class="up">+0.70</td><td class="up">+25.68</td></tr><tr class="row-up"><td>米国S&amp;P500</td><td>7534.02</td><td class="up">+102.56</td><td class="up">+1.38</td><td class="up">+0.44</td><td class="up">+24.88</td></tr><tr class="row-up"><td>米国NASDAQ</td><td>26527.60</td><td class="up">+638.76</td><td class="up">+2.47</td><td class="down">-0.40</td><td class="up">+34.65</td></tr><tr class="row-down"><td>米国NYSE FANG＋</td><td>17362.35</td><td class="down">-298.62</td><td class="down">-1.69</td><td class="up">+0.68</td><td class="up">+21.67</td></tr><tr class="row-up"><td>中国上海総合</td><td>4031.51</td><td class="up">+44.50</td><td class="up">+1.12</td><td class="down">-3.50</td><td class="up">+18.97</td></tr><tr class="row-up"><td>ドイツDAX</td><td>24910.41</td><td class="up">+275.11</td><td class="up">+1.12</td><td class="up">+4.01</td><td class="up">+5.11</td></tr><tr class="row-up"><td>NY金先物</td><td>4366.10</td><td class="up">+38.10</td><td class="up">+0.88</td><td class="down">-4.16</td><td class="up">+28.55</td></tr><tr class="row-down"><td>WTI原油先物</td><td>74.79</td><td class="down">-5.96</td><td class="down">-7.38</td><td class="down">-29.06</td><td class="up">+4.21</td></tr><tr class="row-down"><td>米国債券10年利回</td><td>4.43</td><td class="down">-0.06</td><td class="down">-1.31</td><td class="down">-0.74</td><td class="down">-0.54</td></tr><tr class="row-up"><td>香港ハンセン</td><td>24718.10</td><td class="up">+468.81</td><td class="up">+1.93</td><td class="down">-6.33</td><td class="up">+2.73</td></tr><tr class="row-up"><td>ユーロSTOXX50</td><td>6257.42</td><td class="up">+69.79</td><td class="up">+1.13</td><td class="up">+6.76</td><td class="up">+17.19</td></tr></tbody>
-  </table></div>
-  <p class="muted">取得元の取得時刻: 2026-06-17 01:56:53 JST / 取得件数: 11/11</p>
-</section>
-<section class="panel major-table" data-block="japan-major">
-  <h2>日本主要銘柄（12個）</h2>
-  <div class="table-wrap"><table class="quote-table">
-    <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-    <tbody><tr class="row-up"><td>日本日経225</td><td>66020.04</td><td class="up">+1802.77</td><td class="up">+2.81</td><td class="up">+5.37</td><td class="up">+72.33</td></tr><tr class="row-down"><td>日本TOPIX</td><td>423.10</td><td class="down">-1.40</td><td class="down">-0.33</td><td class="up">+4.24</td><td class="down">-85.66</td></tr><tr class="row-up"><td>日本グロース250</td><td>2486.00</td><td class="up">+25.00</td><td class="up">+1.02</td><td class="up">+8.65</td><td class="up">+65.95</td></tr><tr class="row-down"><td>日本国債10年利回り</td><td>4044.00</td><td class="down">-48.00</td><td class="down">-1.17</td><td class="down">-0.39</td><td class="up">+33.16</td></tr><tr class="row-up"><td>為替 ドル円</td><td>160.38</td><td class="up">+0.43</td><td class="up">+0.27</td><td class="up">+0.97</td><td class="up">+11.31</td></tr><tr class="row-down"><td>ドル建て日経225</td><td>69525.00</td><td class="down">-325.00</td><td class="down">-0.47</td><td class="up">+12.43</td><td class="up">+79.93</td></tr><tr class="row-flat"><td>日経VI</td><td>1995.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td></tr><tr class="row-down"><td>東証REIT指数</td><td>1916.00</td><td class="down">-35.50</td><td class="down">-1.82</td><td class="down">-1.64</td><td class="down">-0.10</td></tr><tr class="row-flat"><td>日経JASDAQ平均</td><td>2632.06</td><td class="flat">+0.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td></tr><tr class="row-flat"><td>JPX日経400</td><td>37350.00</td><td class="flat">+0.00</td><td class="flat">+0.00</td><td class="up">+4.18</td><td class="up">+45.19</td></tr><tr class="row-down"><td>東証プライム上場ETF</td><td>4179.00</td><td class="down">-16.00</td><td class="down">-0.38</td><td class="up">+4.29</td><td class="up">+43.41</td></tr><tr class="row-up"><td>マザーズ関連ETF</td><td>569.80</td><td class="up">+5.50</td><td class="up">+0.97</td><td class="down">-9.74</td><td class="down">-4.83</td></tr></tbody>
-  </table></div>
-  <p class="muted">取得元の取得時刻: 2026-06-17 01:56:55 JST / 取得件数: 12/12</p>
-</section>
+    <section class="panel">
+      <h2>nikkei225jp.com 市況スナップショット</h2>
+      
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th class="num">現在値</th>
+          <th class="num">前日比(%)</th>
+          <th>時刻</th>
+          <th>リンク</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+              <td>日経225</td>
+              <td class="num">69317.50</td>
+              <td class="num">+0.13</td>
+              <td>06/16</td>
+              <td><a href="https://nikkei225jp.com/chart/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>日経先物mini</td>
+              <td class="num">69100.00</td>
+              <td class="num">-0.40</td>
+              <td>06:00</td>
+              <td><a href="https://nikkei225jp.com/cme/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>ドル円</td>
+              <td class="num">160.396</td>
+              <td class="num">-0.00</td>
+              <td>08:10</td>
+              <td><a href="https://nikkei225jp.com/fx/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>NYダウ</td>
+              <td class="num">51671.03</td>
+              <td class="num">+0.64</td>
+              <td>06/16</td>
+              <td><a href="https://nikkei225jp.com/nasdaq/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr> <tr>
+              <td>WTI原油</td>
+              <td class="num">76.66</td>
+              <td class="num">+0.80</td>
+              <td>08:09</td>
+              <td><a href="https://nikkei225jp.com/oil/" target="_blank" rel="noopener noreferrer">詳細</a></td>
+            </tr>
+      </tbody>
+    </table>
+    
+    </section>
 
     <section class="panel">
       <h2>世界ニュース</h2>
       <article class="card">
+              <h3>米国株は続伸、原油安を好感 ハイテク株は反落 (朝の材料チェック)</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 07:20 JST | テーマ: エネルギー</p>
+              <p class="summary">要約: 16日の米国市場では、米国株は続伸した。一方、ハイテク株比率の高いナスダック総合株価指数は反落して取引を終えた。 米国株は4日続伸、景気敏感株に買い 16日の米国株は4日続伸し、終値は前日比328.64ドル高の5万199 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。資源・空運に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212599" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>6月17日(水)■『米国の小売売上高の発表』と『米国の金融政策の発表及びウォーシュFRB議長の記者会見(今回はSEPの発表もあり)』、そして…</h3>
+              <p class="meta">配信: nikkei225jp: 羊飼いの今日の為替はこれで動く | 時刻: 2026-06-17 06:46 JST | テーマ: 為替</p>
+              <p class="summary">要約: 本日の為替相場の焦点は、『米国の小売売上高の発表』と『米国の金融政策の発表及びウォーシュFRB議長の記者会見(今回はSEPの発表もあり)』、そして『日本による為替介入の有無』にあり。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490672" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>S&amp;P500種が最高値圏で失速、FOMC見極め-原油続落で国債利回り低下</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 02:13 JST | テーマ: 金融政策 / エネルギー</p>
+              <p class="summary">要約: 16日の米株式市場ではS&amp;amp;P500種株価指数が反落。ウォーシュ連邦準備制度理事会（FRB）議長の下で初となる政策決定を翌日に控え、最高値圏で失速した。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.49%（-340円）目安。銀行・不動産、資源・空運に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQFGFKJH6V900?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>米国・イランは19日に合意署名へ、双方が勝利主張-海峡再開は不透明</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 01:55 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 米国とイランは19日にスイスで暫定和平合意に正式署名する準備を進めており、双方が勝利を主張している。ただ、合意内容の詳細はなお明らかになりつつある段階で、エネルギー業界関係者の間では、ホルムズ海峡の通航がどれほど速やかに再開されるかについて懐疑的な見方も出ている。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQ6F5KIUPWA00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
               <h3>原油価格高騰の影響はこれから、表面化に備え必要-ECBレーン理事</h3>
               <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 01:44 JST | テーマ: エネルギー</p>
               <p class="summary">要約: 欧州中央銀行（ECB）のチーフエコノミストを務めるレーン理事は16日、イラン戦争によって引き起こされ、まだ十分には表面化していないインフレに備える必要があるとの認識を示した。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+187円）目安。資源・空運に買いが入りやすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。資源・空運に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQA3BT9NJLV00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
             </article>
 <article class="card">
@@ -128,39 +183,18 @@
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。小売・内需に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490653" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
             </article>
-<article class="card">
-              <h3>【速報】NY原油先物は続落、76.88ドル、3/10来の安値</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 22:02 JST | テーマ: エネルギー</p>
-              <p class="summary">要約: NY原油先物は続落、76.88ドル、3/10来の安値</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。資源・空運に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490650" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【NY市場の経済指標とイベ ン ト】</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 21:10 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: [欧米市場の為替相場動向] 6月16日(火) ・21:30 米・輸入物価指数(5月) 1.9％ ・21:30 米・住宅着工件数(5月) -2.2％ -2.8％ ・21:30 米・住宅建設許可件数(5月</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490644" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>ドイツZEW期待指数、6月は予想外の改善-イラン戦争終結の期待が背景</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-16 19:44 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ドイツの欧州経済研究センター（ZEW）が16日発表した6月の期待指数は10.5と、5月のマイナス10.2から上昇した。イラン戦争の終結がドイツ経済への圧力を和らげるとの投資家の期待を背景に、市場予想のマイナス5.5を上回る改善となった。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGPWV6T9NJLW00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>中国不動産株が低迷、2024年の政府刺激策前の水準に逆戻り</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-16 17:34 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 中国の不動産株が低迷している。当局が2024年9月に打ち出した一連の刺激策をきっかけに相場が上昇に転じる前の水準まで下落し、不動産セクターを巡る根強い悲観論が浮き彫りとなった。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGPPDOKJH6V600?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
     </section>
 
     <section class="panel">
       <h2>日本ニュース</h2>
       <article class="card">
+              <h3>米国株、ダウ続伸で始まる 上げ幅400ドル超 米イラン合意受けた買い続く</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-16 23:12 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 【NQNニューヨーク=戸部実華】16日の米株式市場でダウ工業株30種平均は4日続伸して始まり、午前9時35分現在は前日比405ドル63セント高の5万2076ドル66セントと前日付けた最高値を上回って推移している。米国とイランが戦闘終結に向けた覚書で合意したことを受け、主力株に買いが続いている。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL16BLI0W6A610C2000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+            </article>
+<article class="card">
               <h3>【まもなく】米・5住宅着工件数の発表です(日本時間21:30)</h3>
               <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 21:15 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 日本時間16日21時30分に米・5月住宅着工件数が発表されます。 ・米・5月住宅着工件数：万戸（予想：143万戸、4月146.5万戸）</p>
@@ -171,7 +205,7 @@
               <h3>【まもなく】米・5月住宅建設許可件数の発表です(日本時間21:30)</h3>
               <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 21:15 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 日本時間16日21時30分に米・5月住宅建設許可件数が発表されます。 【経済指標】 ・米・5月住宅建設許可件数：万戸（予想：141.9戸、4月142.3万戸）</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.37%（+256円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490645" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
             </article>
 <article class="card">
@@ -199,82 +233,75 @@
               <h3>ロンドン株、小反発で始まる 独・仏株も上昇</h3>
               <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-16 16:30 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 【NQN香港=山下唯】16日朝のロンドン株式市場で、FTSE100種総合株価指数は小幅に反発している。英国時間8時時点では、前日比8.45ポイント（0.08%）高の</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.32%（+222円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL160U50W6A610C2000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
 <article class="card">
-              <h3>日経平均は87円高と4日続伸、一時心理的なフシ目の7万円を突破=16日後場</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-06-16 16:02 JST | テーマ: 為替</p>
-              <p class="summary">要約: １６日後場は日経平均株価が、前日比８７円００銭高の６万９４０４円５０銭と４日続伸。ＴＯＰＩＸ（東証株価指数）は同８．４６ポイント安の３９９１．１４ポイントと３日ぶりに反落した。１...</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/754719" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>JPX日経400大引け 3日ぶり反落 74ポイント安の3万6166</h3>
-              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-16 15:53 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 16日のJPX日経インデックス400は3営業日ぶりに反落した。終値は前日比74.46ポイント（0.21%）安の3万6166.90だった。前日の米ハイテク株高を受けて、東京市場でも人工知能（AI）・半導体関連株の一</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL15AGL0V10C26A6000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
+              <h3>株価指数先物・オプション大引け 先物4日ぶり反落 コール売られる</h3>
+              <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-16 16:26 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 16日の大阪取引所で日経平均先物9月物は4営業日ぶりに反落した。清算値は前日比30円（0.04%）安の6万9370円だった。日中取引の売買高は2万1051枚だった。日銀が16日まで開いた金融政策決定会合で利上げを決めた。発表直後は市場の想定通りにイベントを通過した安心感から、日経平均先物</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.22%（-152円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL15AGY0V10C26A6000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
     </section>
 
     <section class="panel">
       <h2>nikkei225jp.com ニュース</h2>
       <article class="card">
-              <h3>原油価格高騰の影響はこれから、表面化に備え必要-ECBレーン理事</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 01:44 JST | テーマ: エネルギー</p>
-              <p class="summary">要約: 欧州中央銀行（ECB）のチーフエコノミストを務めるレーン理事は16日、イラン戦争によって引き起こされ、まだ十分には表面化していないインフレに備える必要があるとの認識を示した。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.27%（+187円）目安。資源・空運に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQA3BT9NJLV00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>【速報】 関係筋「米イラン合意は、イランの速やかな石油売却を承認へ」=WSJ</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-17 00:59 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ・関係筋「米イラン合意は、イランの速やかな石油売却を承認へ」＝WSJ</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490659" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【NY為替オープニング】FOMC睨む、米イラン和平覚書署名で原油安、ドル続落</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 23:37 JST | テーマ: 金融政策 / エネルギー / 為替</p>
-              <p class="summary">要約: ◇重要イベント・ポイント ・日銀、政策金利を0.25％引き上げ1％、31年ぶりの水準 ・内田日銀副総裁、次の利上げは中東と物価上振れ注視 ・豪・オーストラリア準備銀行(中央銀行)：策金利4.35％で据</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.61%（+423円）目安。銀行・不動産、資源・空運、輸出・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490654" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>AI関連起債に「バブルリスク」、熱狂が行き過ぎ助長-マン・グループ</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-16 23:34 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 世界最大の上場ヘッジファンド運営会社、英マン・グループは人工知能（AI）インフラ構築を巡って関連企業の間で起債が相次いでいることについて、「バブルリスク」が高まりつつあるとの認識を示した。</p>
+              <h3>17日の東京株式市場見通し=軟調な展開か</h3>
+              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-06-17 07:48 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 予想レンジ：６万８９００円－６万９８００円（１６日終値６万９４０４円５０銭） １７日の東京株式は、軟調な展開か。１６日の米国株式は、ＮＹダウが終値ベースで最高値を更新したものの、日経平均株価が影響を・・・</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQ8DMT9NJLY00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+              <p class="mini-link"><a href="https://kabushiki.jp/news/754744" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
-              <h3>【市場反応】米5月住宅着工件数は2020年来の低水準、輸入物価は予想上回る、 ドル軟調</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 22:33 JST | テーマ: インフレ</p>
-              <p class="summary">要約: [欧米市場の為替相場動向] 米商務省が発表した5月住宅着工件数は前月比－15.4％の117.7万戸と、予想143万戸を下回り2020年5月以降ほぼ6年ぶり低水準となった。5月住宅建設許可件数は前月比―0</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。小売・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490653" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+              <h3>本日の予定【発言・イベント】</h3>
+              <p class="meta">配信: nikkei225jp: みんかぶ | 時刻: 2026-06-17 07:21 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 16:15 訪日外客数（5月） 15:00 シムカス・リトアニア中銀総裁、最新経済予測公表 17:00 ECB賃金トラッカー 22:00 スレイペン・オランダ中銀総裁、経済金融会議出席 23:30 米...</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://fx.minkabu.jp/news/370470" target="_blank" rel="noopener noreferrer">記事リンク（fx.minkabu.jp）</a></p>
             </article>
 <article class="card">
-              <h3>【速報】NY原油先物は続落、76.88ドル、3/10来の安値</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 22:02 JST | テーマ: エネルギー</p>
-              <p class="summary">要約: NY原油先物は続落、76.88ドル、3/10来の安値</p>
+              <h3>米国株は続伸、原油安を好感 ハイテク株は反落 (朝の材料チェック)</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 07:20 JST | テーマ: エネルギー</p>
+              <p class="summary">要約: 16日の米国市場では、米国株は続伸した。一方、ハイテク株比率の高いナスダック総合株価指数は反落して取引を終えた。 米国株は4日続伸、景気敏感株に買い 16日の米国株は4日続伸し、終値は前日比328.64ドル高の5万199 […]</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。資源・空運に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490650" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212599" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
             </article>
 <article class="card">
-              <h3>米住宅着工件数、2020年以来の低水準-許可件数も減少</h3>
-              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-16 21:43 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 5月の米住宅着工件数は年率で6年ぶりの低水準となった。集合住宅が特に大きく減少した。</p>
+              <h3>6月のFOMCは政策金利据え置きか?スケジュールなど関連情報まとめ【2026年6月】</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 07:00 JST | テーマ: 金融政策</p>
+              <p class="summary">要約: 6月16日（火）～17日（水）に米連邦準備理事会（ＦＲＢ）が米連邦公開市場委員会（ＦＯＭＣ）を開催する。米国の金融政策を決定するこの会合は、米国景気の先行き、ひいては世界経済にも影響する重大なイベントだ。市場では４会合連 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212468" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>6月17日(水)■『米国の小売売上高の発表』と『米国の金融政策の発表及びウォーシュFRB議長の記者会見(今回はSEPの発表もあり)』、そして…</h3>
+              <p class="meta">配信: nikkei225jp: 羊飼いの今日の為替はこれで動く | 時刻: 2026-06-17 06:46 JST | テーマ: 為替</p>
+              <p class="summary">要約: 本日の為替相場の焦点は、『米国の小売売上高の発表』と『米国の金融政策の発表及びウォーシュFRB議長の記者会見(今回はSEPの発表もあり)』、そして『日本による為替介入の有無』にあり。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。輸出・内需に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490672" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>本日のスケジュール</h3>
+              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-17 06:40 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ＜国内＞ 08:50 貿易収支(5月) -5596億円 2993億円 08:50 輸出(5月) 16.7％ 14.8％ 08:50 輸入(5月) 124.％ 9.8％ 08:50 コア機械受注(4月)</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQ5MZKJH6V400?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490671" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
             </article>
 <article class="card">
-              <h3>【速報】米・5月輸入物価指数は+1.9%</h3>
-              <p class="meta">配信: nikkei225jp: ザイFX！ | 時刻: 2026-06-16 21:34 JST | テーマ: インフレ</p>
-              <p class="summary">要約: 【経済指標】 ・米・5月輸入物価指数：前月比＋1.9％（予想：＋0.9％、4月＋1.9％）</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。小売・内需に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://zai.diamond.jp/articles/-/490649" target="_blank" rel="noopener noreferrer">記事リンク（zai.diamond.jp）</a></p>
+              <h3>金利上昇に備え､家賃アップできる都市部に営業シフト-大東建託社長</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 06:11 JST | テーマ: 金融政策</p>
+              <p class="summary">要約: 金利上昇が続く中、影響を受けやすい不動産・建設業界で戦略転換の動きが現れ始めた。賃貸住宅国内最大手の大東建託は、家賃を引き上げられる余地が大きい都市部での営業を強化する。その反面、地方の採算が取れないエリアは縮小する方針だ。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGEKE0KK3NY900?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
+<article class="card">
+              <h3>JPモルガン、2030年までのAIインフラ投資額を880兆円と予測</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 02:59 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 米銀JPモルガン・チェースは、大手テクノロジー企業が人工知能（AI）インフラの整備に向けて必要となる支出額と借り入れ額の見通しを引き上げた。こうした企業が構築するインフラ容量の予測を上方修正したことを受けた。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQGQHT9NJLY00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
             </article>
     </section>
   </main>
