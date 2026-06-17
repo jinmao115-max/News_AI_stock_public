@@ -18,7 +18,21 @@
       padding: 10px 16px;
       font-size: 13px;
       letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+    .reload-btn {
+      background: #1e40af;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .reload-btn:hover { background: #1d4ed8; }
     .container {
       max-width: 1080px;
       margin: 0 auto;
@@ -65,19 +79,37 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f172a; color: #e2e8f0; }
+      .panel { background: #1e293b; border-color: #334155; }
+      .card { background: #1e293b; border-color: #334155; }
+      .muted, .meta { color: #94a3b8; }
+      .impact { color: #93c5fd; }
+      a { color: #60a5fa; }
+      th { background: #1e3a5f; }
+      th, td { border-color: #334155; }
+    }
   
-/* major-table-v15 */
+/* major-table-v16 */
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .quote-table{width:100%;min-width:820px;border-collapse:collapse}
 .quote-table th,.quote-table td{border:1px solid #e5e7eb;padding:8px;white-space:nowrap;text-align:right}
 .quote-table th:first-child,.quote-table td:first-child{text-align:left}
 .up{color:#15803d;font-weight:600}.down{color:#db2777;font-weight:600}.flat{color:#6b7280}
 .cell-up{background:#ecfdf3}.cell-down{background:#fff1f7}.cell-flat{background:transparent}
+@media(prefers-color-scheme:dark){
+.quote-table th,.quote-table td{border-color:#334155}
+.cell-up{background:#052e16}.cell-down{background:#3b0a1f}.cell-flat{background:transparent}
+.up{color:#4ade80}.down{color:#f472b6}.flat{color:#94a3b8}
+}
 
 </style>
 </head>
 <body>
-  <div class="header-bar">最終更新日時: 2026-06-17 09:46:11 JST</div>
+  <div class="header-bar">
+    <span>最終更新日時: 2026-06-17 10:14:40 JST</span>
+    <button class="reload-btn" onclick="location.reload()">更新</button>
+  </div>
   <main class="container">
     
 
@@ -85,17 +117,17 @@
   <h2>世界主要銘柄（11個）</h2>
   <div class="table-wrap"><table class="quote-table">
     <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-    <tbody><tr><td>オルカンeMAXIS Slim</td><td class="num">157.34<span style="color:#6b7280;font-size:11px;margin-left:2px">$</span></td><td class="num cell-down down">-0.70</td><td class="num cell-down down">-0.44</td><td class="num cell-up up">+2.12</td><td class="num cell-up up">+26.63</td></tr><tr><td>米国S&amp;P500</td><td class="num">7511.35<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-42.94</td><td class="num cell-down down">-0.57</td><td class="num cell-up up">+1.39</td><td class="num cell-up up">+25.55</td></tr><tr><td>米国NASDAQ</td><td class="num">26376.34<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-307.60</td><td class="num cell-down down">-1.15</td><td class="num cell-up up">+0.58</td><td class="num cell-up up">+35.12</td></tr><tr><td>米国NYSE FANG＋</td><td class="num">17296.38<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-364.59</td><td class="num cell-down down">-2.06</td><td class="num cell-up up">+0.29</td><td class="num cell-up up">+21.47</td></tr><tr><td>中国上海総合</td><td class="num">4091.89<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-4.58</td><td class="num cell-down down">-0.11</td><td class="num cell-down down">-0.96</td><td class="num cell-up up">+20.75</td></tr><tr><td>ドイツDAX</td><td class="num">24910.41<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-up up">+16.40</td><td class="num cell-up up">+0.07</td><td class="num cell-up up">+2.48</td><td class="num cell-up up">+5.11</td></tr><tr><td>NY金先物</td><td class="num">4358.00<span style="color:#6b7280;font-size:11px;margin-left:2px">$/oz</span></td><td class="num cell-up up">+30.00</td><td class="num cell-up up">+0.69</td><td class="num cell-down down">-4.34</td><td class="num cell-up up">+28.31</td></tr><tr><td>WTI原油先物</td><td class="num">75.77<span style="color:#6b7280;font-size:11px;margin-left:2px">$/bl</span></td><td class="num cell-down down">-4.98</td><td class="num cell-down down">-6.17</td><td class="num cell-down down">-28.13</td><td class="num cell-up up">+5.57</td></tr><tr><td>米国債10年利回り</td><td class="num">4.43<span style="color:#6b7280;font-size:11px;margin-left:2px">%</span></td><td class="num cell-down down">-0.06</td><td class="num cell-down down">-1.31</td><td class="num cell-down down">-0.74</td><td class="num cell-down down">-0.54</td></tr><tr><td>香港ハンセン</td><td class="num">24493.95<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-348.72</td><td class="num cell-down down">-1.40</td><td class="num cell-down down">-5.66</td><td class="num cell-up up">+1.80</td></tr><tr><td>ユーロSTOXX50</td><td class="num">6257.42<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-up up">+27.99</td><td class="num cell-up up">+0.45</td><td class="num cell-up up">+7.37</td><td class="num cell-up up">+17.19</td></tr></tbody>
+    <tbody><tr><td>オルカンeMAXIS Slim</td><td class="num">157.34<span style="color:#6b7280;font-size:11px;margin-left:2px">$</span></td><td class="num cell-down down">-0.70</td><td class="num cell-down down">-0.44</td><td class="num cell-up up">+2.12</td><td class="num cell-up up">+26.63</td></tr><tr><td>米国S&amp;P500</td><td class="num">7511.35<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-42.94</td><td class="num cell-down down">-0.57</td><td class="num cell-up up">+1.39</td><td class="num cell-up up">+25.55</td></tr><tr><td>米国NASDAQ</td><td class="num">26376.34<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-307.60</td><td class="num cell-down down">-1.15</td><td class="num cell-up up">+0.58</td><td class="num cell-up up">+35.12</td></tr><tr><td>米国NYSE FANG＋</td><td class="num">17296.38<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-364.59</td><td class="num cell-down down">-2.06</td><td class="num cell-up up">+0.29</td><td class="num cell-up up">+21.47</td></tr><tr><td>中国上海総合</td><td class="num">4091.89<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-4.58</td><td class="num cell-down down">-0.11</td><td class="num cell-down down">-0.96</td><td class="num cell-up up">+20.75</td></tr><tr><td>ドイツDAX</td><td class="num">24910.41<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-up up">+16.40</td><td class="num cell-up up">+0.07</td><td class="num cell-up up">+2.48</td><td class="num cell-up up">+5.11</td></tr><tr><td>NY金先物</td><td class="num">4361.60<span style="color:#6b7280;font-size:11px;margin-left:2px">$/oz</span></td><td class="num cell-up up">+33.60</td><td class="num cell-up up">+0.78</td><td class="num cell-down down">-4.26</td><td class="num cell-up up">+28.42</td></tr><tr><td>WTI原油先物</td><td class="num">75.72<span style="color:#6b7280;font-size:11px;margin-left:2px">$/bl</span></td><td class="num cell-down down">-5.03</td><td class="num cell-down down">-6.23</td><td class="num cell-down down">-28.17</td><td class="num cell-up up">+5.50</td></tr><tr><td>米国債10年利回り</td><td class="num">4.43<span style="color:#6b7280;font-size:11px;margin-left:2px">%</span></td><td class="num cell-down down">-0.06</td><td class="num cell-down down">-1.31</td><td class="num cell-down down">-0.74</td><td class="num cell-down down">-0.54</td></tr><tr><td>香港ハンセン</td><td class="num">24493.95<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-348.72</td><td class="num cell-down down">-1.40</td><td class="num cell-flat flat">+0.00</td><td class="num cell-flat flat">+0.00</td></tr><tr><td>ユーロSTOXX50</td><td class="num">6257.42<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-up up">+27.99</td><td class="num cell-up up">+0.45</td><td class="num cell-up up">+7.37</td><td class="num cell-up up">+17.19</td></tr></tbody>
   </table></div>
-  <p class="muted">取得元の取得時刻: 2026-06-17 09:46:13 JST / 取得件数: 11/11</p>
+  <p class="muted">取得元の取得時刻: 2026-06-17 10:14:53 JST / 取得件数: 11/11</p>
 </section>
 <section class="panel major-table" data-block="japan-major">
-  <h2>日本主要銘柄（10個）</h2>
+  <h2>日本主要銘柄（9個）</h2>
   <div class="table-wrap"><table class="quote-table">
     <thead><tr><th>銘柄</th><th>現在値</th><th>昨日からの変動値</th><th>昨日比(%)</th><th>前月比(%)</th><th>前年比(%)</th></tr></thead>
-    <tbody><tr><td>日本日経225</td><td class="num">69464.62<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+60.12</td><td class="num cell-up up">+0.09</td><td class="num cell-up up">+14.72</td><td class="num cell-up up">+80.26</td></tr><tr><td>日本TOPIX</td><td class="num">3934.00<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-78.00</td><td class="num cell-down down">-1.94</td><td class="num cell-up up">+3.82</td><td class="num cell-up up">+43.53</td></tr><tr><td>日本グロース250</td><td class="num">2482.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-down down">-4.00</td><td class="num cell-down down">-0.16</td><td class="num cell-up up">+9.24</td><td class="num cell-up up">+64.92</td></tr><tr><td>日本国債10年利回り</td><td class="num">4046.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+2.00</td><td class="num cell-up up">+0.05</td><td class="num cell-down down">-1.32</td><td class="num cell-up up">+33.40</td></tr><tr><td>為替 ドル円</td><td class="num">160.37<span style="color:#6b7280;font-size:11px;margin-left:2px">円/$</span></td><td class="num cell-up up">+0.14</td><td class="num cell-up up">+0.09</td><td class="num cell-up up">+0.95</td><td class="num cell-up up">+10.81</td></tr><tr><td>ドル建て日経225</td><td class="num">69620.00<span style="color:#6b7280;font-size:11px;margin-left:2px">$</span></td><td class="num cell-down down">-230.00</td><td class="num cell-down down">-0.33</td><td class="num cell-up up">+12.58</td><td class="num cell-up up">+80.18</td></tr><tr><td>東証REIT指数</td><td class="num">1909.50<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-down down">-6.50</td><td class="num cell-down down">-0.34</td><td class="num cell-down down">-2.75</td><td class="num cell-down down">-0.93</td></tr><tr><td>JPX日経400</td><td class="num">37350.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-flat flat">+0.00</td><td class="num cell-flat flat">+0.00</td><td class="num cell-up up">+4.18</td><td class="num cell-up up">+43.90</td></tr><tr><td>東証プライム上場ETF</td><td class="num">4181.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+2.00</td><td class="num cell-up up">+0.05</td><td class="num cell-up up">+3.57</td><td class="num cell-up up">+42.94</td></tr><tr><td>マザーズ関連ETF</td><td class="num">567.50<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-down down">-2.30</td><td class="num cell-down down">-0.40</td><td class="num cell-down down">-12.91</td><td class="num cell-down down">-4.59</td></tr></tbody>
+    <tbody><tr><td>日本日経225</td><td class="num">69591.79<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+187.29</td><td class="num cell-up up">+0.27</td><td class="num cell-up up">+14.93</td><td class="num cell-up up">+80.59</td></tr><tr><td>日本TOPIX</td><td class="num">3934.00<span style="color:#6b7280;font-size:11px;margin-left:2px">pt</span></td><td class="num cell-down down">-78.00</td><td class="num cell-down down">-1.94</td><td class="num cell-up up">+4.04</td><td class="num cell-up up">+43.84</td></tr><tr><td>日本グロース250</td><td class="num">0.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-flat flat">+0.00</td><td class="num cell-flat flat">+0.00</td><td class="num cell-up up">+8.58</td><td class="num cell-up up">+63.92</td></tr><tr><td>日本国債10年利回り</td><td class="num">4055.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+11.00</td><td class="num cell-up up">+0.27</td><td class="num cell-down down">-1.10</td><td class="num cell-up up">+33.70</td></tr><tr><td>為替 ドル円</td><td class="num">160.34<span style="color:#6b7280;font-size:11px;margin-left:2px">円/$</span></td><td class="num cell-up up">+0.11</td><td class="num cell-up up">+0.07</td><td class="num cell-up up">+0.93</td><td class="num cell-up up">+10.78</td></tr><tr><td>ドル建て日経225</td><td class="num">69790.00<span style="color:#6b7280;font-size:11px;margin-left:2px">$</span></td><td class="num cell-down down">-60.00</td><td class="num cell-down down">-0.09</td><td class="num cell-up up">+12.86</td><td class="num cell-up up">+80.62</td></tr><tr><td>東証REIT指数</td><td class="num">1908.50<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-down down">-7.50</td><td class="num cell-down down">-0.39</td><td class="num cell-flat flat">+0.00</td><td class="num cell-flat flat">+0.00</td></tr><tr><td>JPX日経400</td><td class="num">37350.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-flat flat">+0.00</td><td class="num cell-flat flat">+0.00</td><td class="num cell-up up">+4.18</td><td class="num cell-up up">+43.90</td></tr><tr><td>東証プライム上場ETF</td><td class="num">4190.00<span style="color:#6b7280;font-size:11px;margin-left:2px">¥</span></td><td class="num cell-up up">+11.00</td><td class="num cell-up up">+0.26</td><td class="num cell-up up">+3.79</td><td class="num cell-up up">+43.25</td></tr></tbody>
   </table></div>
-  <p class="muted">取得元の取得時刻: 2026-06-17 09:46:14 JST / 取得件数: 10/10</p>
+  <p class="muted">取得元の取得時刻: 2026-06-17 10:15:24 JST / 取得件数: 8/9</p>
 </section>
 
     <section class="panel">
@@ -106,13 +138,6 @@
               <p class="summary">要約: 米連邦準備制度の今後数カ月の金融政策を巡り、オプション市場の見方は割れている。利下げから複数回の利上げまで、投資家の予想にばらつきがある。</p>
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。銀行・不動産に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-17/TGQVM4KJH6V400?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
-            </article>
-<article class="card">
-              <h3>16日の米国市場ダイジェスト:米国株式市場はまちまち、イラン和平合意好感もハイテクで利益確定売り</h3>
-              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-06-17 08:58 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: ■NY株式：米国株式市場はまちまち、イラン和平合意好感もハイテクで利益確定売り 米国株式市場はまちまち。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260617/857303.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
             </article>
 <article class="card">
               <h3>ダウ328ドル高 ハイテク株に利食い売り スペースX5%高【早読み世界市場】</h3>
@@ -156,11 +181,25 @@
               <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。大型株に買いが入りやすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQ6F5KIUPWA00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
             </article>
+<article class="card">
+              <h3>原油価格高騰の影響はこれから、表面化に備え必要-ECBレーン理事</h3>
+              <p class="meta">配信: nikkei225jp: Bloomberg | 時刻: 2026-06-17 01:44 JST | テーマ: エネルギー</p>
+              <p class="summary">要約: 欧州中央銀行（ECB）のチーフエコノミストを務めるレーン理事は16日、イラン戦争によって引き起こされ、まだ十分には表面化していないインフレに備える必要があるとの認識を示した。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.42%（+291円）目安。資源・空運に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.bloomberg.com/jp/news/articles/2026-06-16/TGQA3BT9NJLV00?srnd=jp-markets" target="_blank" rel="noopener noreferrer">記事リンク（bloomberg.com）</a></p>
+            </article>
     </section>
 
     <section class="panel">
       <h2>日本ニュース</h2>
       <article class="card">
+              <h3>野村アセットでは2040年に26万円と計算</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-06-17 10:00 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 10時3分時点の日経平均は135円高の6万9,544円、TOPIXは5ポイント高の3,997ポイント。東証プライム市場の上昇銘柄数は1,085、下落銘柄数は429。出来高は6億762万株、売買代金は3</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+153円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-10%e6%99%82%e3%80%80%e9%87%8e%e6%9d%91%e3%82%a2%e3%82%bb%e3%83%83%e3%83%88%e3%81%a7%e3%81%af2040%e5%b9%b4%e3%81%ab26%e4%b8%87%e5%86%86%e3%81%a8%e8%a8%88%e7%ae%97/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
               <h3>日経平均は5日ぶり反落スタート、米半導体株安や7万円達成感から売り優勢=17日寄り付き</h3>
               <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-06-17 09:10 JST | テーマ: 市場全般</p>
               <p class="summary">要約: １７日の日経平均株価は、前日比３９８円６２銭安の６万９００５円８８銭と５日ぶりに反落して取引を開始した。１６日の米国株式は、ＮＹダウが連日で終値ベースでの最高値を更新した一方、ナスダック総合指数とＳ・・・</p>
@@ -171,7 +210,7 @@
               <h3>日経平均、反落で始まる 米ハイテク株安で</h3>
               <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-17 09:07 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 17日の東京株式市場で日経平均株価は反落で始まった。始値は前日比398円62銭安の6万9005円88銭。前日の米株式市場でハイテク株比率が高いナスダック総合株価指数と、主要な半導体関連銘柄で構成するフィラデル</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.27%（-187円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-222円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL170M70X10C26A6000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
             </article>
 <article class="card">
@@ -203,13 +242,6 @@
               <p class="mini-link"><a href="https://kabushiki.jp/news/754772" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
             </article>
 <article class="card">
-              <h3>「株式」ADR日本株ランキング~やや売り優勢、シカゴは大阪日中比605円安の69185円</h3>
-              <p class="meta">配信: nikkei225jp: 財経新聞 | 時刻: 2026-06-17 08:40 JST | テーマ: 為替</p>
-              <p class="summary">要約: ADR（米国預託証券）の日本株は、対東証比較（1ドル160.39円換算）で、東京エレク＜8031＞、リクルートHD＜6098＞、ディスコ＜6146＞などが下落し、やや売り優勢。</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.zaikei.co.jp/article/20260617/857300.html" target="_blank" rel="noopener noreferrer">記事リンク（zaikei.co.jp）</a></p>
-            </article>
-<article class="card">
               <h3>シンガポール・日経平均先物=寄り付き6万9110円(前日比405円安)</h3>
               <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-06-17 08:31 JST | テーマ: 為替</p>
               <p class="summary">要約: １７日のシンガポール・日経平均先物は前日比４０５円安の６万９１１０円で寄り付いた。提供：ウエルスアドバイザー社</p>
@@ -221,10 +253,31 @@
     <section class="panel">
       <h2>nikkei225jp.com ニュース</h2>
       <article class="card">
+              <h3>円相場、FOMC前で小幅な値動き・三菱UFJ銀の横尾氏</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 10:01 JST | テーマ: 金融政策</p>
+              <p class="summary">要約: 横尾明彦・三菱ＵＦＪ銀行シニアアナリスト ６月17日の東京外国為替市場で、円相場は１ドル＝160円台半ばを中心に小幅な値動きとなりそうだ。米国とイランの戦闘終結に向けた覚書の合意を受けて原油先物価格は下落したものの、戦闘 […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.27%（-187円）目安。銀行・不動産に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212633" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>野村アセットでは2040年に26万円と計算</h3>
+              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-06-17 10:00 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: 10時3分時点の日経平均は135円高の6万9,544円、TOPIXは5ポイント高の3,997ポイント。東証プライム市場の上昇銘柄数は1,085、下落銘柄数は429。出来高は6億762万株、売買代金は3</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.22%（+153円）目安。大型株に買いが入りやすい局面を想定。</p>
+              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-10%e6%99%82%e3%80%80%e9%87%8e%e6%9d%91%e3%82%a2%e3%82%bb%e3%83%83%e3%83%88%e3%81%a7%e3%81%af2040%e5%b9%b4%e3%81%ab26%e4%b8%87%e5%86%86%e3%81%a8%e8%a8%88%e7%ae%97/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
+            </article>
+<article class="card">
+              <h3>時間外取引でオラクルが安い マイクロソフトとの契約話が決裂と伝わる</h3>
+              <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 09:47 JST | テーマ: 市場全般</p>
+              <p class="summary">要約: ６月16日夕の米株式市場の時間外取引で、オラクル（ORCL）が下落している。通常取引を前日比2.23％安の188.33ドルで終えた後、時間外では一時185ドル台まで売られて終値を１％強下回った。通常取引の終了間際にマイク […]</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212627" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
+            </article>
+<article class="card">
               <h3>「世紀の空売り」バーリ氏、スペースXの空売り「関わってない」 米報道</h3>
               <p class="meta">配信: nikkei225jp: moneyworld | 時刻: 2026-06-17 09:38 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 米著名投資家マイケル・バーリ氏は、スペースＸ（SPCX）株の取引を行っていないことを明らかにした。同氏のブログをもとに米ＣＮＢＣが６月16日報じた。株価下落に賭けるオプション取引には消極的で、３兆ドルに迫る時価総額にも疑 […]</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.22%（-153円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.42%（-291円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
               <p class="mini-link"><a href="https://moneyworld.jp/news/detail?id=212622" target="_blank" rel="noopener noreferrer">記事リンク（moneyworld.jp）</a></p>
             </article>
 <article class="card">
@@ -252,29 +305,8 @@
               <h3>日経平均、反落で始まる 米ハイテク株安で</h3>
               <p class="meta">配信: nikkei225jp: 日経新聞 | 時刻: 2026-06-17 09:07 JST | テーマ: 市場全般</p>
               <p class="summary">要約: 17日の東京株式市場で日経平均株価は反落で始まった。始値は前日比398円62銭安の6万9005円88銭。前日の米株式市場でハイテク株比率が高いナスダック総合株価指数と、主要な半導体関連銘柄で構成するフィラデル</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.27%（-187円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
+              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.32%（-222円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
               <p class="mini-link"><a href="https://www.nikkei.com/article/DGXZQOFL170M70X10C26A6000000/" target="_blank" rel="noopener noreferrer">記事リンク（nikkei.com）</a></p>
-            </article>
-<article class="card">
-              <h3>17日寄り付きの日経平均株価=398円62銭安の6万9005円88銭</h3>
-              <p class="meta">配信: nikkei225jp: 株式新聞Web | 時刻: 2026-06-17 09:01 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: １７日の日経平均株価は前日比３９８円６２銭安の６万９００５円８８銭で寄り付いた。提供：ウエルスアドバイザー社</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 +0.37%（+257円）目安。大型株に買いが入りやすい局面を想定。</p>
-              <p class="mini-link"><a href="https://kabushiki.jp/news/754777" target="_blank" rel="noopener noreferrer">記事リンク（kabushiki.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>【為替】日銀利上げ後の為替への影響は?</h3>
-              <p class="meta">配信: nikkei225jp: 吉田恒の為替デイリー | 時刻: 2026-06-17 09:00 JST | テーマ: 金融政策 / 為替</p>
-              <p class="summary">要約: 日銀は6月16日の金融政策決定会合で利上げを決めた。これは2026年に入り4回目の会合で初の利上げだった。。過去3回の金融政策決定会合では金融政策の変更はなかったが、会合から3営業日以内に、日本の円安阻止策の発動を主なきっかけに米ドル／円は急落した。その意味で...</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.49%（-340円）目安。銀行・不動産、輸出・内需に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://media.monex.co.jp/articles/-/29576" target="_blank" rel="noopener noreferrer">記事リンク（media.monex.co.jp）</a></p>
-            </article>
-<article class="card">
-              <h3>反落。銀行株は反発しTOPIXは下落回避</h3>
-              <p class="meta">配信: nikkei225jp: 日本証券新聞 | 時刻: 2026-06-17 09:00 JST | テーマ: 市場全般</p>
-              <p class="summary">要約: 9時8分時点の日経平均は200円安の6万9,186円、TOPIXは6ポイント高の3,997ポイント。 16日に日経平均7万円到達で達成感が出たことや、その後の米国半導体株安を受けて、17日の日経平均は</p>
-              <p class="impact">株価への具体的影響: 想定影響: 日経平均 -0.22%（-153円）目安。大型株に利益確定売りが出やすい局面を想定。</p>
-              <p class="mini-link"><a href="https://www.nsjournal.jp/%e2%98%86%e6%a6%82%e6%b3%81-%e5%af%84%e3%82%8a%e4%bb%98%e3%81%8d%e3%80%80%e5%8f%8d%e8%90%bd%e3%80%82%e9%8a%80%e8%a1%8c%e6%a0%aa%e3%81%af%e5%8f%8d%e7%99%ba%e3%81%97topix%e3%81%af%e4%b8%8b%e8%90%bd/" target="_blank" rel="noopener noreferrer">記事リンク（nsjournal.jp）</a></p>
             </article>
     </section>
   </main>
