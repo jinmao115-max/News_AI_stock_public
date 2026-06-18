@@ -107,6 +107,22 @@ def ffill_quarterly(rows):
             m[f"{yy}-{mm:02d}"] = v
     return m
 
+def interp_quarterly(rows):
+    """四半期データを月次に線形補間する（前方コピーより滑らか）。
+    四半期間の月は前後の四半期値を1/3ずつ補間。最終四半期は前方コピー。"""
+    if not rows:
+        return OrderedDict()
+    pts = sorted((int(d.split("-")[0]), int(d.split("-")[1]), v) for d, v in rows)
+    result = OrderedDict()
+    for i, (y, mo, v) in enumerate(pts):
+        nv = pts[i + 1][2] if i + 1 < len(pts) else v
+        for off in range(3):
+            mm, yy = mo + off, y
+            if mm > 12:
+                mm -= 12; yy += 1
+            result[f"{yy}-{mm:02d}"] = v + (nv - v) * off / 3.0
+    return OrderedDict(sorted(result.items()))
+
 def yoy_index(mm):
     out = OrderedDict()
     for k in mm:
@@ -243,7 +259,7 @@ def yoy_quarter_index(rows):
     for i, k in enumerate(keys):
         if i >= 4 and vals[keys[i-4]] != 0:
             g.append((k + "-01", (vals[k] / vals[keys[i-4]] - 1.0) * 100.0))
-    return ffill_quarterly(g)
+    return interp_quarterly(g)
 
 def process(sid, kind):
     rows = fetch(sid)
@@ -254,7 +270,7 @@ def process(sid, kind):
     if kind == "cpi_index":
         return yoy_index(month_avg(rows))
     if kind == "quarterly":
-        return ffill_quarterly(rows)
+        return interp_quarterly(rows)
     if kind == "gdp_index_q":
         return yoy_quarter_index(rows)
     if kind == "jp_cpi_splice":
@@ -373,6 +389,18 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   footer{color:var(--sub);font-size:.78rem;margin-top:36px;text-align:center}
   .src{display:inline-block;background:rgba(78,161,255,.15);color:var(--stock);
        padding:2px 9px;border-radius:999px;font-size:.75rem;font-weight:700}
+  .lag-vis{display:flex;align-items:center;gap:4px;margin:8px 0}
+  .lv-s{white-space:nowrap;font-size:.74rem;background:rgba(255,255,255,.08);padding:2px 7px;border-radius:4px;color:var(--sub)}
+  .lv-line{flex:1;height:0;border-top:2px dashed;margin:0 3px;opacity:.7}
+  .lv-lbl{white-space:nowrap;font-size:.78rem;font-weight:700;padding:0 2px}
+  .lv-arr{font-size:.85rem}
+  .hm-wrap{overflow-x:auto;margin-top:8px}
+  .hm-tbl{width:100%;border-collapse:collapse;font-size:.85rem}
+  .hm-tbl th,.hm-tbl td{padding:10px 13px;border-bottom:1px solid var(--line)}
+  .hm-tbl th{color:var(--sub);font-weight:600;text-align:center}
+  .hm-tbl td{text-align:center}
+  .hm-tbl td:first-child{text-align:left;font-weight:600}
+  .hm-tbl .sub{font-size:.73rem;color:var(--sub);font-weight:500}
 </style>
 </head>
 <body>
@@ -431,6 +459,13 @@ Object.keys(DATA.countries).forEach(cc=>{
       ${KEYS.map(k=>`<div class="card" style="border-left:4px solid ${KCOLOR[k]}">
         <div class="t">${({rate:'🏦 政策金利',cpi:'🔥 インフレ率',gdp:'📊 経済成長率',emp:'👷 雇用者数'})[k]}</div>
         <div class="lag" style="color:${KCOLOR[k]}">${lagText(L[k])}</div>
+        <div class="lag-vis">
+          <span class="lv-s">指標</span>
+          <span class="lv-line" style="border-color:${KCOLOR[k]}"></span>
+          <span class="lv-lbl" style="color:${KCOLOR[k]}">${L[k].lag!=null?L[k].lag+'ヶ月':'?'}</span>
+          <span class="lv-arr" style="color:${KCOLOR[k]}">▶</span>
+          <span class="lv-s">株価</span>
+        </div>
         <div class="corr">相関 r=${L[k].corr??'-'}（${L[k].corr>=0?'同じ向き':'逆の向き'}に連動）</div>
       </div>`).join('')}
     </div>
@@ -482,6 +517,53 @@ Object.keys(DATA.countries).forEach(cc=>{
   drawDual('rate');
   document.getElementById('sel_'+cc).addEventListener('change',e=>drawDual(e.target.value));
 });
+
+// ③ 全体比較：時間差ヒートマップ
+(function(){
+  const INDS=[
+    {k:'rate',label:'🏦 政策金利'},
+    {k:'cpi', label:'🔥 インフレ率'},
+    {k:'gdp', label:'📊 経済成長率'},
+    {k:'emp', label:'👷 雇用者数'},
+  ];
+  const ccs=Object.keys(DATA.countries);
+
+  function cellBg(r){
+    const a=Math.min(Math.abs(r)*2.5,0.85);
+    return r>=0?'rgba(81,216,138,'+a+')':'rgba(255,107,107,'+a+')';
+  }
+
+  let hdrs='<th rowspan="2" style="text-align:left">指標</th>';
+  for(const cc of ccs) hdrs+='<th colspan="2">'+DATA.countries[cc].meta.flag+' '+DATA.countries[cc].meta.name+'</th>';
+  let sub='';
+  for(const cc of ccs) sub+='<th class="sub">時間差</th><th class="sub">相関 r</th>';
+
+  let trows='';
+  for(const {k,label} of INDS){
+    let cells='<td>'+label+'</td>';
+    for(const cc of ccs){
+      const lg=DATA.countries[cc].lags[k];
+      const r=lg.corr??0;
+      cells+='<td>'+(lg.lag!=null?lg.lag+'ヶ月後':'-')+'</td>';
+      cells+='<td style="background:'+cellBg(r)+';font-weight:700">'+r.toFixed(2)+'</td>';
+    }
+    trows+='<tr>'+cells+'</tr>';
+  }
+
+  const hm=document.createElement('div');
+  hm.className='panel';
+  hm.style.marginTop='32px';
+  hm.innerHTML=
+    '<div class="ph"><div class="nm">③ 時間差ヒートマップ：アメリカ・日本 比較</div></div>'+
+    '<p class="hint">各指標が動いてから株価に反映されるまでの月数(時間差)と相関の強さ(r)を色で表示。'+
+    '<span style="display:inline-block;width:11px;height:11px;background:rgba(81,216,138,.85);vertical-align:middle;border-radius:2px;margin:0 4px 0 10px"></span>正の連動（同じ向き）'+
+    '<span style="display:inline-block;width:11px;height:11px;background:rgba(255,107,107,.85);vertical-align:middle;border-radius:2px;margin:0 4px 0 10px"></span>負の連動（逆の向き）　色が濃いほど相関が強い。</p>'+
+    '<div class="hm-wrap"><table class="hm-tbl">'+
+    '<thead><tr>'+hdrs+'</tr><tr>'+sub+'</tr></thead>'+
+    '<tbody>'+trows+'</tbody>'+
+    '</table></div>';
+  content.appendChild(hm);
+})();
 </script>
 </body>
 </html>
