@@ -147,6 +147,39 @@ def us_stock_monthly(fred_sid):
     print("    → Yahoo失敗、FRED SPXにフォールバック")
     return month_avg(fetch(fred_sid))
 
+# ── 日本CPI: OECD G20 CPI データセット（月次・前年比%・2026年まで更新中）─────
+OECD_G20_CPI_URL = (
+    "https://sdmx.oecd.org/public/rest/data/"
+    "OECD.SDD.TPS,DSD_G20_PRICES@DF_G20_PRICES,1.0/"
+    "JPN.M.N.CPI.PA._T.N.GY"
+    "?startPeriod=1990-01&format=csv"
+)
+
+def fetch_oecd_g20_jp_cpi():
+    """OECD G20 CPI データセットから日本の月次前年比%を取得。失敗時None。
+    日本はG20加盟国であり、2026年まで毎月更新されている。"""
+    import csv, io
+    try:
+        raw = curl(OECD_G20_CPI_URL)
+        reader = csv.DictReader(io.StringIO(raw))
+        out = OrderedDict()
+        for row in reader:
+            t = row.get("TIME_PERIOD", "").strip()
+            v = row.get("OBS_VALUE", "").strip()
+            if len(t) == 7 and v not in ("", ".", "NA"):  # 'YYYY-MM'形式のみ
+                try:
+                    out[t] = float(v)
+                except ValueError:
+                    pass
+        if len(out) < 100:
+            return None
+        result = OrderedDict(sorted(out.items()))
+        print(f"    → OECD G20 CPI使用: {list(result)[0]}〜{list(result)[-1]}")
+        return result
+    except Exception as e:
+        print(f"  [OECD G20 CPI] 取得失敗: {e}")
+        return None
+
 # ── 日本CPI: IMF IFS 月次インデックス → 前年比% ──────────────────────────────
 def fetch_imf_jp_cpi():
     """IMF IFS API から日本の月次CPI指数を取得し前年比%に変換。失敗時None。"""
@@ -188,7 +221,15 @@ def jp_cpi_merged():
     return OrderedDict(sorted(out.items()))
 
 def jp_cpi_final():
-    """日本CPI: IMF IFS月次(一番精度高い)→失敗時は接ぎ木にフォールバック。"""
+    """日本CPI取得の優先順位:
+    1. OECD G20 CPI（月次・前年比・2026年まで更新）← 最優先
+    2. IMF IFS（月次インデックス→前年比）         ← 次点
+    3. OECD月次+世界銀行年次の接ぎ木              ← 最終フォールバック
+    """
+    oecd = fetch_oecd_g20_jp_cpi()
+    if oecd:
+        return oecd
+    print("    → OECD G20失敗、IMFを試行")
     imf = fetch_imf_jp_cpi()
     if imf:
         return imf
@@ -264,7 +305,7 @@ def best_lag(syoy, ind):
     return best
 
 def build():
-    src = ("FRED API+" if API_KEY else "FRED CSV+") + "Yahoo Finance+IMF IFS"
+    src = ("FRED API+" if API_KEY else "FRED CSV+") + "Yahoo Finance+OECD G20 CPI"
     out = {"countries": {}, "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
            "source": src}
     for c, cfg in SERIES.items():
