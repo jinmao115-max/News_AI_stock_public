@@ -21,7 +21,7 @@ SERIES = {
     "US": {
         "name": "アメリカ", "stockName": "S&P500", "flag": "🇺🇸",
         "defs": {
-            "stock": ("SP500", "daily"),
+            "stock": ("SP500", "yahoo_spx"),   # Yahoo Finance で25年分、失敗時はFRED
             "rate":  ("FEDFUNDS", "monthly"),
             "cpi":   ("CPIAUCSL", "cpi_index"),
             "gdp":   ("A191RL1Q225SBEA", "quarterly"),
@@ -33,7 +33,7 @@ SERIES = {
         "defs": {
             "stock": ("NIKKEI225", "daily"),
             "rate":  ("IRSTCI01JPM156N", "monthly"),
-            "cpi":   ("JPNCPIALLMINMEI", "jp_cpi_splice"),
+            "cpi":   ("JPNCPIALLMINMEI", "imf_jp_cpi"),   # IMF IFS月次、失敗時は接ぎ木
             "gdp":   ("JPNRGDPEXP", "gdp_index_q"),
             "emp":   ("LFEMTTTTJPM647S", "level"),
         },
@@ -45,6 +45,12 @@ LABELS = {"rate": "政策金利 (%)", "cpi": "インフレ率 前年比(%)",
 
 def curl(url):
     r = subprocess.run(["curl", "-s", "--max-time", "70", url],
+                       capture_output=True, text=True, encoding="utf-8")
+    return r.stdout
+
+def curl_ua(url):
+    """User-Agentが必要なサイト（Yahoo Finance等）向け。"""
+    r = subprocess.run(["curl", "-s", "--max-time", "70", "-A", "Mozilla/5.0", url],
                        capture_output=True, text=True, encoding="utf-8")
     return r.stdout
 
@@ -110,6 +116,61 @@ def yoy_index(mm):
             out[k] = (mm[k] / mm[prev] - 1.0) * 100.0
     return out
 
+# ── S&P500: Yahoo Finance から25年分の月次を取得 ─────────────────────────────
+def fetch_yahoo_monthly(ticker, yrange="25y"):
+    """Yahoo Finance v8 API から月次終値を取得。戻り値: OrderedDict('YYYY-MM'->float)。"""
+    import datetime as _dt
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+           f"?interval=1mo&range={yrange}")
+    try:
+        d = json.loads(curl_ua(url))
+        r0 = d["chart"]["result"][0]
+        ts = r0["timestamp"]
+        closes = r0["indicators"]["adjclose"][0]["adjclose"]
+        bucket = {}
+        for t, v in zip(ts, closes):
+            if v is None:
+                continue
+            k = _dt.datetime.fromtimestamp(t, tz=_dt.timezone.utc).strftime("%Y-%m")
+            bucket.setdefault(k, []).append(v)
+        return OrderedDict((k, sum(vs)/len(vs)) for k, vs in sorted(bucket.items()))
+    except Exception as e:
+        print(f"  [Yahoo] {ticker} 取得失敗: {e}")
+        return OrderedDict()
+
+def us_stock_monthly(fred_sid):
+    """S&P500月次。Yahoo Finance(25年)→失敗時FREDにフォールバック。"""
+    yf = fetch_yahoo_monthly("%5EGSPC", "25y")
+    if len(yf) >= 200:
+        print(f"    → Yahoo Finance使用: {list(yf)[0]}〜{list(yf)[-1]}")
+        return yf
+    print("    → Yahoo失敗、FRED SPXにフォールバック")
+    return month_avg(fetch(fred_sid))
+
+# ── 日本CPI: IMF IFS 月次インデックス → 前年比% ──────────────────────────────
+def fetch_imf_jp_cpi():
+    """IMF IFS API から日本の月次CPI指数を取得し前年比%に変換。失敗時None。"""
+    url = "https://dataservices.imf.org/REST/SDMX_JSON.svc/CompactData/IFS/M.JP.PCPI_IX"
+    try:
+        raw = curl(url)
+        d = json.loads(raw)
+        obs = d["CompactData"]["DataSet"]["Series"]["Obs"]
+        mm = OrderedDict()
+        for o in obs:
+            if "@OBS_VALUE" in o and "@TIME_PERIOD" in o:
+                try:
+                    mm[o["@TIME_PERIOD"]] = float(o["@OBS_VALUE"])
+                except ValueError:
+                    pass
+        if len(mm) < 100:
+            return None
+        result = yoy_index(mm)
+        print(f"    → IMF IFS使用: {list(result)[0]}〜{list(result)[-1]}")
+        return result
+    except Exception as e:
+        print(f"  [IMF] JP CPI 取得失敗: {e}")
+        return None
+
 # 日本の月次CPIはFREDで2021年6月に打ち切られたため、
 # 月次(OECD,〜2021/6)＋年次(世界銀行,2021/7以降)を接ぎ木して直近まで延ばす。
 WB_JP_CPI = "FPCPITOTLZGJPN"  # 世界銀行: 日本のインフレ率(年次・前年比%)
@@ -125,6 +186,14 @@ def jp_cpi_merged():
             if k > last:                                    # OECD月次の後ろだけ年次で補う
                 out[k] = v
     return OrderedDict(sorted(out.items()))
+
+def jp_cpi_final():
+    """日本CPI: IMF IFS月次(一番精度高い)→失敗時は接ぎ木にフォールバック。"""
+    imf = fetch_imf_jp_cpi()
+    if imf:
+        return imf
+    print("    → IMF失敗、接ぎ木(OECD月次+世界銀行年次)にフォールバック")
+    return jp_cpi_merged()
 
 def yoy_quarter_index(rows):
     vals = OrderedDict((mkey(d), v) for d, v in rows)
@@ -149,6 +218,10 @@ def process(sid, kind):
         return yoy_quarter_index(rows)
     if kind == "jp_cpi_splice":
         return jp_cpi_merged()
+    if kind == "imf_jp_cpi":
+        return jp_cpi_final()
+    if kind == "yahoo_spx":
+        return us_stock_monthly(sid)
     return OrderedDict()
 
 def month_add(k, n):
@@ -191,8 +264,9 @@ def best_lag(syoy, ind):
     return best
 
 def build():
+    src = ("FRED API+" if API_KEY else "FRED CSV+") + "Yahoo Finance+IMF IFS"
     out = {"countries": {}, "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
-           "source": "FRED API" if API_KEY else "FRED CSV(キー無し)"}
+           "source": src}
     for c, cfg in SERIES.items():
         print(f"== {c} ==")
         data, kinds = {}, {}
