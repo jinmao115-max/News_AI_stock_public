@@ -33,7 +33,7 @@ SERIES = {
         "defs": {
             "stock": ("NIKKEI225", "daily"),
             "rate":  ("IRSTCI01JPM156N", "monthly"),
-            "cpi":   ("JPNCPIALLMINMEI", "cpi_index"),
+            "cpi":   ("JPNCPIALLMINMEI", "jp_cpi_splice"),
             "gdp":   ("JPNRGDPEXP", "gdp_index_q"),
             "emp":   ("LFEMTTTTJPM647S", "level"),
         },
@@ -110,6 +110,22 @@ def yoy_index(mm):
             out[k] = (mm[k] / mm[prev] - 1.0) * 100.0
     return out
 
+# 日本の月次CPIはFREDで2021年6月に打ち切られたため、
+# 月次(OECD,〜2021/6)＋年次(世界銀行,2021/7以降)を接ぎ木して直近まで延ばす。
+WB_JP_CPI = "FPCPITOTLZGJPN"  # 世界銀行: 日本のインフレ率(年次・前年比%)
+
+def jp_cpi_merged():
+    oecd = yoy_index(month_avg(fetch("JPNCPIALLMINMEI")))  # 月次 前年比% (〜2021/6)
+    out = OrderedDict(oecd)
+    last = list(oecd)[-1] if oecd else "2021-06"           # 'YYYY-MM'
+    for d, v in fetch(WB_JP_CPI):                           # 年次 前年比%
+        yr = d.split("-")[0]
+        for m in range(1, 13):
+            k = f"{yr}-{m:02d}"
+            if k > last:                                    # OECD月次の後ろだけ年次で補う
+                out[k] = v
+    return OrderedDict(sorted(out.items()))
+
 def yoy_quarter_index(rows):
     vals = OrderedDict((mkey(d), v) for d, v in rows)
     keys = list(vals.keys())
@@ -131,6 +147,8 @@ def process(sid, kind):
         return ffill_quarterly(rows)
     if kind == "gdp_index_q":
         return yoy_quarter_index(rows)
+    if kind == "jp_cpi_splice":
+        return jp_cpi_merged()
     return OrderedDict()
 
 def month_add(k, n):
