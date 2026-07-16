@@ -1,0 +1,33 @@
+# ===== 認証情報・シークレット（絶対にコミットしない） =====
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials*.json
+service_account*.json
+token.json
+secrets.json
+*.sqlite
+*.sqlite3
+*.db
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# ===== Node.js =====
+node_modules/
+
+# ===== OS / エディタ =====
+.DS_Store
+Thumbs.db
+*.tmp
